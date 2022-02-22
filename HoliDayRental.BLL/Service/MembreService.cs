@@ -5,31 +5,30 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace HoliDayRental.BLL.Service
-
 {
-    public class BienEchangeService : IBienEchangeRepository<HoliDayRental.BLL.Entity.BienEchange>
+    public class MembreService : IMembreServiceRepository<HoliDayRental.BLL.Entity.Membre>
     {
         public void Delete(int id)
         {
             throw new NotImplementedException();
         }
 
-        public BienEchange Get(int id)
+        public Membre Get(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<BienEchange> Get()
+        public IEnumerable<Membre> Get()
         {
             throw new NotImplementedException();
         }
 
-        public int Insert(BienEchange entity)
+        public int Insert(Membre entity)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(int id, BienEchange entity)
+        public void Update(int id, Membre entity)
         {
             throw new NotImplementedException();
         }

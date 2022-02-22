@@ -30,31 +30,32 @@ namespace HoliDayRental.BLL.Entity
         public Membre Membre { get; set; }
 
 
-        public BienEchange(int id, string title, string descCourte, string descLong, int nbrePerson,  string ville, string rue, string num, string codePostal, string photo, bool assurance, string latitude, string longitude, DateTime dateCreation, Pays pays, Membre membre)
+        public BienEchange(int id, string title, string descCourte, string descLong, int nbrePerson, string ville, string rue, string numero, string codePostale, string photo, bool assurance, string latitude, string longitude, Pays pays, Membre membre)
         {
+           
             idBien = id;
             titre = title;
             DescCourte = descCourte;
             DescLong = descLong;
             NombrePerson = nbrePerson;
-            Pays = pays;
+           
             Ville = ville;
             Rue = rue;
-            Numero = num;
-            CodePostal = codePostal;
+            Numero = numero;
+            CodePostal = codePostale;
             Photo = photo;
             AssuranceObligatoire = assurance;
             Latitude = latitude;
             Longitude = longitude;
-            DateCreation = dateCreation;
             Membre = membre;
+            Pays = pays;
             if (pays == null) throw new ArgumentNullException(nameof(idPays));
             idPays = pays.idPays;
             if (membre == null) throw new ArgumentNullException(nameof(idMembre));
             idMembre = membre.idMembre;
         }
 
-        public BienEchange(int id, string title, string descCourte, string descLong, int nbrePerson, int Id_pays, string ville, string rue, string num, string codePostal, string photo, bool assurance, string latitude, string longitude, int id_membre, DateTime dateCreation)
+        public BienEchange(int id, string title, string descCourte, string descLong, int nbrePerson, int Id_pays, string ville, string rue, string num, string codePostal, string photo, bool assurance, bool isEnabled, string latitude, string longitude, int id_membre, DateTime dateCreation)
         {
             idBien = id;
             titre = title;

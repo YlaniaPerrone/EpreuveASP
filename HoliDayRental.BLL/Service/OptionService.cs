@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace HoliDayRental.BLL.Repository
+namespace HoliDayRental.BLL.Service
 
 {
     public class OptionsService

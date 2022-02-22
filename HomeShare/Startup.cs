@@ -36,10 +36,12 @@ namespace HoliDayRental
 
             services.AddControllersWithViews();
 
-            services.AddScoped<HoliDayRental.Common.Repository.IBienEchangeRepository<HoliDayRental.BLL.Entity.BienEchange>, HoliDayRental.BLL.Service.BienEchangeRepository>();
-            services.AddScoped<HoliDayRental.Common.Repository.IBienEchangeRepository<HoliDayRental.DAL.Entite.BienEchange>,  HoliDayRental.DAL.Repository.BienEchangeService>();
+            
 
-             services.AddScoped<HoliDayRental.Common.Repository.IMembreServiceRepository<HoliDayRental.BLL.Entity.Membre>, MembreService>();
+            services.AddScoped<HoliDayRental.Common.Repository.IBienEchangeRepository<HoliDayRental.DAL.Entite.BienEchange>, HoliDayRental.DAL.Repository.BienEchangeService>();
+            services.AddScoped<HoliDayRental.Common.Repository.IBienEchangeRepository<HoliDayRental.BLL.Entity.BienEchange>, HoliDayRental.BLL.Service.BienEchangeService>();
+
+            services.AddScoped<HoliDayRental.Common.Repository.IMembreServiceRepository<HoliDayRental.BLL.Entity.Membre>, HoliDayRental.BLL.Service.MembreService>();
             services.AddScoped<HoliDayRental.Common.Repository.IMembreServiceRepository<HoliDayRental.DAL.Entite.Membre>,  HoliDayRental.DAL.Repository.MembreService>();
 
             
