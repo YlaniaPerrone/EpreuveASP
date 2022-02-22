@@ -148,7 +148,7 @@ namespace HoliDayRental.DAL.Repository
                     command.Parameters.Add(p_assuranceObligatoire);
                     SqlParameter p_isEnabled = new SqlParameter("isEnabled", entity.isEnabled);
                     command.Parameters.Add(p_isEnabled);
-                    SqlParameter p_disabledDate = new SqlParameter("DisabledDate", entity.DisabledDate);
+                    SqlParameter p_disabledDate = new SqlParameter { ParameterName =  "DisabledDate", Value = (object)entity.DisabledDate ?? DBNull.Value };
                     command.Parameters.Add(p_disabledDate);
                     SqlParameter p_latitude = new SqlParameter("Latitude", entity.Latitude);
                     command.Parameters.Add(p_latitude);
@@ -158,6 +158,9 @@ namespace HoliDayRental.DAL.Repository
                     command.Parameters.Add(p_idMembre);
                     SqlParameter p_dateCreation = new SqlParameter("DateCreation", entity.DateCreation);
                     command.Parameters.Add(p_dateCreation);
+
+                    SqlParameter p_assuranceObligatoire = new SqlParameter { ParameterName = "AssuranceObligatoire", Value = (object)entity.AssuranceObligatoire ?? DBNull.Value };
+
 
                     connection.Open();
                     command.ExecuteNonQuery();

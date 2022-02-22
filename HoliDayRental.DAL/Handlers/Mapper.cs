@@ -65,7 +65,7 @@ namespace HoliDayRental.DAL.Handler
                 Photo = (string)record[nameof(BienEchange.Photo)],
                 AssuranceObligatoire = (bool)record[nameof(BienEchange.AssuranceObligatoire)],
                 isEnabled   = (bool)record[nameof(BienEchange.isEnabled)],
-                DisabledDate = (record[nameof(BienEchange.DisabledDate)] == DBNull.Value) ? null : (DateTime)record[nameof(BienEchange.DisabledDate)],
+                DisabledDate = (record[nameof(BienEchange.DisabledDate)] == DBNull.Value) ? null : (DateTime?)record[nameof(BienEchange.DisabledDate)],
                 Latitude = (string)record[nameof(BienEchange.Latitude)],
                 Longitude = (string)record[nameof(BienEchange.Longitude)],
                 idMembre = (int)record[nameof(BienEchange.idMembre)],
@@ -82,7 +82,7 @@ namespace HoliDayRental.DAL.Handler
                 idBien = (int)record[nameof(MembreBienEchange.idBien)],
                 DateDebEchange = (DateTime)record[nameof(MembreBienEchange.DateDebEchange)],
                 DateFinEchange = (DateTime)record[nameof(MembreBienEchange.DateDebEchange)],
-                Assurance = (record[nameof(MembreBienEchange.Assurance)] == DBNull.Value) ? null : (bool)record[nameof(MembreBienEchange.Assurance)],
+                Assurance = (record[nameof(MembreBienEchange.Assurance)] == DBNull.Value) ? null : (bool?)record[nameof(MembreBienEchange.Assurance)],
                 Valide = (bool)record[nameof(MembreBienEchange.Valide)],
 
 
