@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HoliDayRental.DAL.Repository
 {
-    internal class AvisMembreBienService
+    public class AvisMembreBienService
     {
     }
 }

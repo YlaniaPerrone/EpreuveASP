@@ -16,7 +16,7 @@ namespace HoliDayRental.DAL.Repository
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "DELETE FROM [BienEchange] WHERE [Id] = @id";
+                    command.CommandText = "DELETE FROM [BienEchange] WHERE [idBien = @id";
                     //Parameters...
                     SqlParameter p_id = new SqlParameter("id", id);
                     command.Parameters.Add(p_id);
@@ -34,7 +34,7 @@ namespace HoliDayRental.DAL.Repository
                 using (SqlCommand command = connection.CreateCommand())
                 {
                     command.CommandText = "SELECT [idBien], [titre], [DescCourte], [DescLong], [NombrePerson], [Pays], [Ville], [Rue], [Numero], [CodePostal], [Photo], [AssuranceObligatoire], [isEnabled], [DisabledDate], [Latitude], [Longitude], [idMembre], [DateCreation] " +
-                        " FROM [BienEchange] WHERE [Id] = @id";
+                        " FROM [BienEchange] WHERE [idBien] = @id";
                     //Parameters...
                     SqlParameter p_id = new SqlParameter("id", id);
                     command.Parameters.Add(p_id);
@@ -144,7 +144,7 @@ namespace HoliDayRental.DAL.Repository
                     command.Parameters.Add(p_codePostal);
                     SqlParameter p_photo = new SqlParameter("Photo", entity.Photo);
                     command.Parameters.Add(p_photo);
-                    SqlParameter p_assuranceObligatoire = new SqlParameter { ParameterName = "AssuranceObligatoire", Value = (object)entity.AssuranceObligatoire ?? DBNull.Value };
+                    SqlParameter p_assuranceObligatoire = new SqlParameter("AssuranceObligatoire", entity.AssuranceObligatoire);
                     command.Parameters.Add(p_assuranceObligatoire);
                     SqlParameter p_isEnabled = new SqlParameter("isEnabled", entity.isEnabled);
                     command.Parameters.Add(p_isEnabled);
@@ -158,8 +158,6 @@ namespace HoliDayRental.DAL.Repository
                     command.Parameters.Add(p_idMembre);
                     SqlParameter p_dateCreation = new SqlParameter("DateCreation", entity.DateCreation);
                     command.Parameters.Add(p_dateCreation);
-
-                    SqlParameter p_assuranceObligatoire = new SqlParameter { ParameterName = "AssuranceObligatoire", Value = (object)entity.AssuranceObligatoire ?? DBNull.Value };
 
 
                     connection.Open();

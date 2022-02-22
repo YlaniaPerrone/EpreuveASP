@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HoliDayRental.DAL.Repository
 {
-    internal class MembreBienEchangeService
+    public class MembreBienEchangeService
     {
     }
 }
