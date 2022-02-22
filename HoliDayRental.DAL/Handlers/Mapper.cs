@@ -73,20 +73,20 @@ namespace HoliDayRental.DAL.Handler
             };
         }
 
-        public static MembreBienEchange ToMembreBienEchange(IDataRecord record)
-        {
-            if (record is null) return null;
-            return new MembreBienEchange
-            {
-                idMembre = (int)record[nameof(MembreBienEchange.idMembre)],
-                idBien = (int)record[nameof(MembreBienEchange.idBien)],
-                DateDebEchange = (DateTime)record[nameof(MembreBienEchange.DateDebEchange)],
-                DateFinEchange = (DateTime)record[nameof(MembreBienEchange.DateDebEchange)],
-                Assurance = (record[nameof(MembreBienEchange.Assurance)] == DBNull.Value) ? null : (bool?)record[nameof(MembreBienEchange.Assurance)],
-                Valide = (bool)record[nameof(MembreBienEchange.Valide)],
+        //public static MembreBienEchange ToMembreBienEchange(IDataRecord record)
+        //{
+        //    if (record is null) return null;
+        //    return new MembreBienEchange
+        //    {
+        //        idMembre = (int)record[nameof(MembreBienEchange.idMembre)],
+        //        idBien = (int)record[nameof(MembreBienEchange.idBien)],
+        //        DateDebEchange = (DateTime)record[nameof(MembreBienEchange.DateDebEchange)],
+        //        DateFinEchange = (DateTime)record[nameof(MembreBienEchange.DateDebEchange)],
+        //        Assurance = (record[nameof(MembreBienEchange.Assurance)] == DBNull.Value) ? null : (bool?)record[nameof(MembreBienEchange.Assurance)],
+        //        Valide = (bool)record[nameof(MembreBienEchange.Valide)],
 
 
-            };
-        }
+        //    };
+        //}
     }
 }

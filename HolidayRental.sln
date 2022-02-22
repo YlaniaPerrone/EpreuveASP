@@ -4,6 +4,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HoliDayRental", "HomeShare\HoliDayRental.csproj", "{8020D524-9DA0-42F3-906F-C726363F865F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{94D60088-D503-460C-B1F1-E6B6069EF69A} = {94D60088-D503-460C-B1F1-E6B6069EF69A}
+		{00E612F3-9075-402D-BC84-681CD64654D5} = {00E612F3-9075-402D-BC84-681CD64654D5}
+	EndProjectSection
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "HoliDayRental.DB", "HoliDayRental.DB\HoliDayRental.DB.sqlproj", "{86D984FC-8413-4724-93FC-BAAF7FCC59C4}"
 EndProject

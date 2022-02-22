@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Demo.CinemaProject.Common.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace HoliDayRental.Common.Repository
 {
-    internal interface IBaseRepository 
+    public interface IBaseRepository<TEntite> : IRepository<TEntite, int>, IGetRepository<TEntite, int>
     {
     }
 }

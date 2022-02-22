@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HoliDayRental.DAL.Repository
 {
-    public  class OptionsService
+    public  class OptionsService: ConnectionBase
     {
     }
 }

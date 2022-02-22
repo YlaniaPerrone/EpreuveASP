@@ -9,6 +9,6 @@ namespace HoliDayRental.BLL.Repository
 {
     public class OptionsService
     {
-        
+
     }
 }

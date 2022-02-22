@@ -123,3 +123,4 @@ namespace HoliDayRental.DAL.Repository
             }
         }
     }
+}

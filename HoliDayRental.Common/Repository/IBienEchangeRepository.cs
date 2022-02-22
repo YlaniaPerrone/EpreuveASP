@@ -5,7 +5,7 @@ using System.Text;
 
 namespace HoliDayRental.Common.Repository
 {
-    public interface IBienEchangeRepository<TBienEchange> : IRepository<TBienEchange, int>
+    public interface IBienEchangeRepository<TBienEchange> : IRepository<TBienEchange, int>, IGetRepository<TBienEchange, int>
     {
 
     }

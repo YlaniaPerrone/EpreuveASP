@@ -35,6 +35,18 @@ namespace HoliDayRental
             });      //permet de configurer les sessions pour mon application
 
             services.AddControllersWithViews();
+
+            services.AddScoped<HoliDayRental.Common.Repository.IBienEchangeRepository<HoliDayRental.BLL.Entity.BienEchange>, HoliDayRental.BLL.Service.BienEchangeRepository>();
+            services.AddScoped<HoliDayRental.Common.Repository.IBienEchangeRepository<HoliDayRental.DAL.Entite.BienEchange>,  HoliDayRental.DAL.Repository.BienEchangeService>();
+
+             services.AddScoped<HoliDayRental.Common.Repository.IMembreServiceRepository<HoliDayRental.BLL.Entity.Membre>, MembreService>();
+            services.AddScoped<HoliDayRental.Common.Repository.IMembreServiceRepository<HoliDayRental.DAL.Entite.Membre>,  HoliDayRental.DAL.Repository.MembreService>();
+
+            
+
+
+            // services.AddScoped<IDeveloperRepository<DAL.Entities.ITLang>, DAL.Repositories.ITLangService>();
+           //  services.AddScoped<IDeveloperRepository<ITLang>, ITLangService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
