@@ -28,14 +28,33 @@ namespace HoliDayRental.BLL.Entity
         public int idMembre { get; set; }
         public DateTime DateCreation { get; set; }
 
-        public Membre Membre { get; set; }
+        //public Membre Membre { get; set; }
         //public  Pays Pays { get; set; }
 
-        public BienEchange(int id_bien, string titre, string DescCourte, string DescLong, int NombrePerson, int Pays, string Ville, string Rue, string Numero, string CodePostal, string Photo, bool AssuranceObligatoire, bool isEnabled, DateTime? DisabledDate, string Latitude, string Longitude, int idMembre, DateTime DateCreation
-)
-        {
+//        public BienEchange(int id_bien, string title, string descCourte, string descLong, int nombrePerson, int pays, string ville, string rue, string numero, string codePostal, string photo, bool assuranceObligatoire, bool is_Enabled, DateTime? disabledDate, string latitude, string longitude, int id_Membre, DateTime dateCreation
+//)
+//        {
+//            idBien = id_bien;
+//            titre = title;
+//            DescCourte = descCourte;
+//            DescLong = descLong;
+//            NombrePerson = nombrePerson;
+//            Pays = pays;
+//            Ville = ville;
+//            Rue = rue;
+//            Numero = numero;
+//            CodePostal = codePostal;
+//            Photo = photo;  
+//            AssuranceObligatoire = assuranceObligatoire;
+//            isEnabled = is_Enabled;
+//            DisabledDate = disabledDate;
+//            Latitude = latitude;
+//            Longitude = longitude;
+//            idMembre = id_Membre;
+//            DateCreation = dateCreation;
+//            Membre = null;
 
-        }
+//        }
     
     }
 }

@@ -10,30 +10,30 @@ namespace HoliDayRental.BLL.Entity
         public int idBien { get; set; }
         public string Valeur { get; set; }
     
-        public Options Options { get; set; }
-        public BienEchange BienEchange { get; set; }
+        //public Options Options { get; set; }
+        //public BienEchange BienEchange { get; set; }
 
-        public OptionsBien(int id_Option, int id_Bien, string valeur)
-        {
-            idOption = id_Option;
-            idBien = id_Bien;
-            Valeur = valeur;
-            Options = null;
-            BienEchange = null;
+        //public OptionsBien(int id_Option, int id_Bien, string valeur)
+        //{
+        //    idOption = id_Option;
+        //    idBien = id_Bien;
+        //    Valeur = valeur;
+        //    Options = null;
+        //    BienEchange = null;
 
-        }
+        //}
 
-        public OptionsBien(string valeur, Options options, BienEchange bienEchange)
-        {
+        //public OptionsBien(string valeur, Options options, BienEchange bienEchange)
+        //{
 
-            Valeur = valeur;
-            Options = options;
-            idOption = options.idOption;
-            BienEchange = bienEchange;
-            idBien = bienEchange.idBien;
+        //    Valeur = valeur;
+        //    Options = options;
+        //    idOption = options.idOption;
+        //    BienEchange = bienEchange;
+        //    idBien = bienEchange.idBien;
 
 
-        }
+        //}
 
     }
 }

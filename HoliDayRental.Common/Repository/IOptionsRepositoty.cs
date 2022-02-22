@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace HoliDayRental.DAL.Repository
+namespace HoliDayRental.Common.Repository
 {
-    public  class OptionsService
+    internal interface IOptionsRepositoty
     {
     }
 }

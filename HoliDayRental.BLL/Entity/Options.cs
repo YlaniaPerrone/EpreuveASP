@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HoliDayRental.BLL.Entity
 {
-    public class Options
+    public class Options 
     {
         public int idOption { get; set; }
         public string Libelle { get; set; }

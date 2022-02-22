@@ -5,8 +5,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\HoliDayRental.DAL\HoliDayRental.DAL.csproj" />
-  </ItemGroup>
-
 </Project>
