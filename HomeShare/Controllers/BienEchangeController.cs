@@ -33,9 +33,31 @@ namespace HoliDayRental.Controllers
         }
 
         // GET: BienEchange/Create
-        public ActionResult Create()
+        public ActionResult Create(BienEchangeCreate collection)
         {
             BienEchangeCreate bien  = new BienEchangeCreate();
+            HoliDayRental.BLL.Entity.BienEchange result = new BLL.Entity.BienEchange()
+            {
+                idBien = collection.idBien,
+                titre = collection.titre,
+                DescCourte = collection.DescCourte,
+                DescLong   = collection.DescLong,
+                NombrePerson = collection.NombrePerson,
+                idPays = collection.Pays,
+                Ville = collection.Ville,
+                Rue = collection.Rue,
+                Numero = collection.Numero,
+                CodePostal = collection.CodePostal,
+                Photo = collection.Photo,
+                AssuranceObligatoire =  collection.AssuranceObligatoire,
+                isEnabled = collection.isEnabled,
+                DisabledDate = collection.DisabledDate,
+                Latitude = collection.Latitude,
+                Longitude = collection.Longitude,
+                idMembre = collection.idMembre,
+                DateCreation = collection.DateCreation,
+
+            };
             return View(bien);
         }
 
