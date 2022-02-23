@@ -23,7 +23,6 @@ namespace HoliDayRental.Models.BienEchange
       
         public string Latitude { get; set; }
         public string Longitude { get; set; }
-        public int idMembre { get; set; }
         
     }
 }

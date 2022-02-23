@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace HoliDayRental.Models.BienEchange
@@ -12,6 +13,8 @@ namespace HoliDayRental.Models.BienEchange
         public string DescCourte { get; set; }
         public string DescLong { get; set; }
         public int NombrePerson { get; set; }
+
+        //public IEnumerable<Pays> Pays {get; set;}
         public int Pays { get; set; }
         public string Ville { get; set; }
         public string Rue { get; set; }
@@ -22,10 +25,16 @@ namespace HoliDayRental.Models.BienEchange
         public string Photo { get; set; }
         public bool AssuranceObligatoire { get; set; }
         public bool isEnabled { get; set; }
+
+        [DataType("datetime-local")]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy hh:mm}")]
         public DateTime? DisabledDate { get; set; }
         public string Latitude { get; set; }
         public string Longitude { get; set; }
         public int idMembre { get; set; }
+
+        [DataType("datetime-local")]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy hh:mm}")]
         public DateTime DateCreation { get; set; }
 
     }

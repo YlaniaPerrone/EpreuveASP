@@ -1,6 +1,5 @@
 ﻿using HoliDayRental.Common.Repository;
 using HoliDayRental.Handlers;
-using HoliDayRental.Models;
 using HoliDayRental.Models.BienEchange;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -28,6 +27,7 @@ namespace HoliDayRental.Controllers
         // GET: BienEchange/Details/5
         public ActionResult Details(int id)
         {
+            
             BienDetails model = _bienService.Get(id).ToDetails();
             return View(model);
         }
@@ -36,26 +36,45 @@ namespace HoliDayRental.Controllers
         public ActionResult Create(BienEchangeCreate collection)
         {
             BienEchangeCreate bien  = new BienEchangeCreate();
-            HoliDayRental.BLL.Entity.BienEchange result = new BLL.Entity.BienEchange()
+            HoliDayRental.BLL.Entity.BienEchange result = new BLL.Entity.BienEchange(
+                0,
+                collection.titre,
+                collection.DescCourte,
+                collection.DescLong,
+                collection.NombrePerson,
+                collection.Pays,
+                collection.Ville,
+                collection.Rue,
+                collection.Numero,
+                collection.CodePostal,
+                collection.Photo,
+                collection.AssuranceObligatoire,
+                collection.isEnabled,
+                collection.DateCreation,
+                collection.Latitude,
+                collection.Longitude,
+                collection.idBien
+                );
             {
-                idBien = collection.idBien,
-                titre = collection.titre,
-                DescCourte = collection.DescCourte,
-                DescLong   = collection.DescLong,
-                NombrePerson = collection.NombrePerson,
-                idPays = collection.Pays,
-                Ville = collection.Ville,
-                Rue = collection.Rue,
-                Numero = collection.Numero,
-                CodePostal = collection.CodePostal,
-                Photo = collection.Photo,
-                AssuranceObligatoire =  collection.AssuranceObligatoire,
-                isEnabled = collection.isEnabled,
-                DisabledDate = collection.DisabledDate,
-                Latitude = collection.Latitude,
-                Longitude = collection.Longitude,
-                idMembre = collection.idMembre,
-                DateCreation = collection.DateCreation,
+                
+                //idBien = collection.idBien,
+                //titre = collection.titre,
+                //DescCourte = collection.DescCourte,
+                //DescLong   = collection.DescLong,
+                //NombrePerson = collection.NombrePerson,
+                //idPays = collection.Pays,
+                //Ville = collection.Ville,
+                //Rue = collection.Rue,
+                //Numero = collection.Numero,
+                //CodePostal = collection.CodePostal,
+                //Photo = collection.Photo,
+                //AssuranceObligatoire =  collection.AssuranceObligatoire,
+                //isEnabled = collection.isEnabled,
+                ////DisabledDate = collection.DisabledDate,
+                //Latitude = collection.Latitude,
+                //Longitude = collection.Longitude,
+                //idMembre = collection.idMembre,
+                ////DateCreation = collection.DateCreation,
 
             };
             return View(bien);

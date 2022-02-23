@@ -46,10 +46,11 @@ namespace HoliDayRental.BLL.Handlers
             entity.AssuranceObligatoire,
             entity.isEnabled,
             //entity.DisabledDate,
+            entity.DateCreation,
             entity.Latitude,
             entity.Longitude,
             entity.idMembre
-            //entity.DateCreation
+            
 
 
                 );
@@ -105,11 +106,11 @@ namespace HoliDayRental.BLL.Handlers
                 Nom = entity.Nom,
                 Prenom = entity.Prenom,
                 Email = entity.Email,
-                Pays = entity.Pays,
                 Telephone = entity.Telephone,
                 Login = entity.Login,
-                Password = entity.Password
-                
+                Password = entity.Password,
+                Pays = entity.pays.idPays
+                               
             };
         }
 

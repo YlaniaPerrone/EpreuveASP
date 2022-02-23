@@ -1,9 +1,12 @@
 ﻿using HoliDayRental.Models.BienEchange;
+using HoliDayRental.Models.Membre;
 
 namespace HoliDayRental.Handlers
 {
     public static class Mapper
     {
+
+        //bien
         public static BienEchangeItem ToListItem(this HoliDayRental.BLL.Entity.BienEchange entity )
         {
             if (entity == null) return null;
@@ -23,10 +26,10 @@ namespace HoliDayRental.Handlers
                 AssuranceObligatoire = entity.AssuranceObligatoire,
                 isEnabled = entity.isEnabled,
                 DisabledDate = entity.DisabledDate,
+                DateCreation = entity.DateCreation,
                 Latitude = entity.Latitude,
                 Longitude = entity.Longitude,
                 idMembre =  entity.idMembre,
-                DateCreation = entity.DateCreation,
             };
         }
 
@@ -47,8 +50,6 @@ namespace HoliDayRental.Handlers
                 CodePostal = entity.CodePostal,
                 Photo = entity.Photo,
                 AssuranceObligatoire = entity.AssuranceObligatoire,
-                //isEnabled = entity.isEnabled,
-                //DisabledDate = entity.DisabledDate,
                 Latitude = entity.Latitude,
                 Longitude = entity.Longitude
               
@@ -80,6 +81,25 @@ namespace HoliDayRental.Handlers
                 DateCreation = entity.DateCreation,
             };
         }
+
+        //Membre
+        public static MembreItem ToListMembre(this HoliDayRental.BLL.Entity.Membre entity)
+        {
+            if (entity == null) return null;
+            return new MembreItem
+            {
+               idMembre = entity.idMembre,
+               Nom = entity.Nom,
+               Prenom = entity.Prenom,
+               Email = entity.Email,
+               Telephone = entity.Telephone,
+               //Pays = entity.Pays,
+               Login = entity.Login,
+               Password = entity.Password
+               
+            };
+        }
+
 
 
     }

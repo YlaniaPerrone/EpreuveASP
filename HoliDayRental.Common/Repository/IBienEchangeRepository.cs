@@ -7,6 +7,7 @@ namespace HoliDayRental.Common.Repository
 {
     public interface IBienEchangeRepository<TBienEchange> : IRepository<TBienEchange, int>, IGetRepository<TBienEchange, int>
     {
+        //public IEnumerable<TBienEchange> GetBienDyspo(bool isEnabled);
 
     }
 }
