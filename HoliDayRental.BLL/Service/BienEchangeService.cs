@@ -12,35 +12,44 @@ namespace HoliDayRental.BLL.Service
     public class BienEchangeService : IBienEchangeRepository<HoliDayRental.BLL.Entity.BienEchange>
 
     {
-        private readonly IBienEchangeRepository<DAL.Entite.BienEchange> _BienEchangeRepository;
-        public BienEchangeService(IBienEchangeRepository<DAL.Entite.BienEchange> repository)
+        private readonly IBienEchangeRepository<DAL.Entite.BienEchange> _bienEchangeRepository;
+        private readonly IMembreRepository<DAL.Entite.Membre> _membreRepository;
+        //private readonly IPaysRepository<DAL.Entite.Pays> _paysRepository;
+        public BienEchangeService(IBienEchangeRepository<DAL.Entite.BienEchange> repository, IMembreRepository<DAL.Entite.Membre> repositoryMembre) //IPaysRepository<DAL.Entite.Pays> repositoryPays)
         {
-            _BienEchangeRepository = repository;
+            _bienEchangeRepository = repository;
+            _membreRepository = repositoryMembre;
+            //_paysRepository = repositoryPays;
         }
         public void Delete(int id)
         {
-            _BienEchangeRepository.Delete(id);
+            _bienEchangeRepository.Delete(id);
         }
 
         public BienEchange Get(int id)
         {
-            return _BienEchangeRepository.Get(id).ToBLL();
+            return _bienEchangeRepository.Get(id).ToBLL();
         }
 
         public IEnumerable<BienEchange> Get()
         {
-            return _BienEchangeRepository.Get().Select(c => c.ToBLL());
-
+          
+            return _bienEchangeRepository.Get().Select(b => {
+                BienEchange result = b.ToBLL();
+                result.Membre = _membreRepository.Get(result.idMembre).ToBLL();
+                //result.Pays = _paysRepository.Get(result.idPays).ToBLL();
+                return result;
+            });
         }
 
         public int Insert(BienEchange entity)
         {
-            return _BienEchangeRepository.Insert(entity.ToDALL());
+            return _bienEchangeRepository.Insert(entity.ToDALL());
         }
 
         public void Update(int id, BienEchange entity)
         {
-            _BienEchangeRepository.Update(id, entity.ToDALL());
+            _bienEchangeRepository.Update(id, entity.ToDALL());
         }
     }
 }

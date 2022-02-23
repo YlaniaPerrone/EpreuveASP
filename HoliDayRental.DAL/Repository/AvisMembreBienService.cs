@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HoliDayRental.DAL.Repository
 {
-    public class AvisMembreBienService : ConnectionBase, IAvisBienMembreRepository<AvisMembreBien>
+    public class AvisMembreBienService //: ConnectionBase, IAvisBienMembreRepository<AvisMembreBien>
     {
         public void Delete(int id)
         {

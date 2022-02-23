@@ -8,7 +8,7 @@ using System.Text;
 
 namespace HoliDayRental.DAL.Repository
 {
-    public class MembreService : ConnectionBase, IMembreServiceRepository<Membre>
+    public class MembreService : ConnectionBase, IMembreRepository<Membre>
     {
         public void Delete(int id)
         {
@@ -32,7 +32,7 @@ namespace HoliDayRental.DAL.Repository
                 using (SqlCommand command = connection.CreateCommand())
                 {
                     command.CommandText = "SELECT [idMembre],[Nom],[Prenom],[Email],[Pays],[Telephone],[Login],[Password] " +
-                        " FROM [Membre] WHERE [IdidMembre] = @id";
+                        " FROM [Membre] WHERE [idMembre] = @id";
                     //Parameters...
                     SqlParameter p_id = new SqlParameter("id", id);
                     command.Parameters.Add(p_id);

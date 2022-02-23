@@ -9,4 +9,6 @@ namespace HoliDayRental.DAL.Entite
         public int idPays { get; set; }
         public string Libelle { get; set; }
      }
+
+   
 }

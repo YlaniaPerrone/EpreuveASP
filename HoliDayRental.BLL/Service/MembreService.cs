@@ -6,7 +6,7 @@ using System.Text;
 
 namespace HoliDayRental.BLL.Service
 {
-    public class MembreService : IMembreServiceRepository<HoliDayRental.BLL.Entity.Membre>
+    public class MembreService : IMembreRepository<HoliDayRental.BLL.Entity.Membre>
     {
         public void Delete(int id)
         {

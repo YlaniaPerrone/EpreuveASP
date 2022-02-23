@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace HoliDayRental.Models
+namespace HoliDayRental.Models.BienEchange
 {
     public class BienEchangeItem
     {

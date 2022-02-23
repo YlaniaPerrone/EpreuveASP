@@ -1,8 +1,10 @@
 ﻿using HoliDayRental.Common.Repository;
 using HoliDayRental.Handlers;
 using HoliDayRental.Models;
+using HoliDayRental.Models.BienEchange;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -26,13 +28,15 @@ namespace HoliDayRental.Controllers
         // GET: BienEchange/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            BienDetails model = _bienService.Get(id).ToDetails();
+            return View(model);
         }
 
         // GET: BienEchange/Create
         public ActionResult Create()
         {
-            return View();
+            BienEchangeCreate bien  = new BienEchangeCreate();
+            return View(bien);
         }
 
         // POST: BienEchange/Create
@@ -42,7 +46,13 @@ namespace HoliDayRental.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                if (!ModelState.IsValid) throw new Exception();
+                //HoliDayRental.BLL.Entity.BienEchange result = new HoliDayRental.BLL.Entity.BienEchange()
+                //{
+                //    idBien = collection.idBien,
+
+                //}
+                return View();
             }
             catch
             {
