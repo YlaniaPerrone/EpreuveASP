@@ -1,11 +1,11 @@
-﻿using Demo.CinemaProject.Common.Repositories;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace HoliDayRental.Common.Repository
 {
-    public interface IMembreRepository<TEntite> : IRepository<TEntite, int>
+    public interface IMembreRepository<Membre> : IGetRepository<Membre, int>
     {
 
     }

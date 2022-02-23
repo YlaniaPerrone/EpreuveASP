@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace HoliDayRental.DAL.Entite
+namespace HoliDayRental.DAL.Entity
 {
     public class BienEchange
     {
@@ -13,6 +13,7 @@ namespace HoliDayRental.DAL.Entite
 
         public int NombrePerson { get; set; }
         public int Pays { get; set; }
+        public IEnumerable<Pays> PaysList { get; set; }
         public string Ville { get; set; }
         public string Rue { get; set; }
 

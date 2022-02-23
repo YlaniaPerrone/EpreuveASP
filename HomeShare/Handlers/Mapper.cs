@@ -1,5 +1,6 @@
 ﻿using HoliDayRental.Models.BienEchange;
 using HoliDayRental.Models.Membre;
+using HoliDayRental.Models.Payss;
 
 namespace HoliDayRental.Handlers
 {
@@ -52,14 +53,14 @@ namespace HoliDayRental.Handlers
                 AssuranceObligatoire = entity.AssuranceObligatoire,
                 Latitude = entity.Latitude,
                 Longitude = entity.Longitude
-              
+
             };
         }
-
-        public static BienEchangeCreate ToCreate(this HoliDayRental.BLL.Entity.BienEchange entity)
+        
+        public static BienEdit ToBienEdit(this HoliDayRental.BLL.Entity.BienEchange entity)
         {
             if (entity == null) return null;
-            return new BienEchangeCreate
+            return new BienEdit
             {
                 idBien = entity.idBien,
                 titre = entity.titre,
@@ -72,13 +73,12 @@ namespace HoliDayRental.Handlers
                 Numero = entity.Numero,
                 CodePostal = entity.CodePostal,
                 Photo = entity.Photo,
-                AssuranceObligatoire = entity.AssuranceObligatoire,
                 isEnabled = entity.isEnabled,
                 DisabledDate = entity.DisabledDate,
+                AssuranceObligatoire = entity.AssuranceObligatoire,
                 Latitude = entity.Latitude,
-                Longitude = entity.Longitude,
-                idMembre = entity.idMembre,
-                DateCreation = entity.DateCreation,
+                Longitude = entity.Longitude
+              
             };
         }
 
@@ -100,6 +100,17 @@ namespace HoliDayRental.Handlers
             };
         }
 
+
+        //Pays
+        public static Pays ToListPays(this HoliDayRental.BLL.Entity.Pays entity)
+        {
+            if (entity == null) return null;
+            return new Pays
+            {
+                idPays = entity.idPays,
+                Libelle = entity.Libelle
+            };
+        }
 
 
     }

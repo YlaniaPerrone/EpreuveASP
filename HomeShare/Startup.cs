@@ -38,16 +38,18 @@ namespace HoliDayRental
 
             
             //service bien
-            services.AddScoped<HoliDayRental.Common.Repository.IBienEchangeRepository<HoliDayRental.DAL.Entite.BienEchange>, HoliDayRental.DAL.Repository.BienEchangeService>();
+            services.AddScoped<HoliDayRental.Common.Repository.IBienEchangeRepository<HoliDayRental.DAL.Entity.BienEchange>, HoliDayRental.DAL.Repository.BienEchangeService>();
             services.AddScoped<HoliDayRental.Common.Repository.IBienEchangeRepository<HoliDayRental.BLL.Entity.BienEchange>, HoliDayRental.BLL.Service.BienEchangeService>();
 
             //service membre
+            services.AddScoped<HoliDayRental.Common.Repository.IMembreRepository<HoliDayRental.DAL.Entity.Membre>, HoliDayRental.DAL.Repository.MembreService>();
             services.AddScoped<HoliDayRental.Common.Repository.IMembreRepository<HoliDayRental.BLL.Entity.Membre>, HoliDayRental.BLL.Service.MembreService>();
-            services.AddScoped<HoliDayRental.Common.Repository.IMembreRepository<HoliDayRental.DAL.Entite.Membre>,  HoliDayRental.DAL.Repository.MembreService>();
 
             //service pays
-            services.AddScoped<HoliDayRental.Common.Repository.IMembreRepository<HoliDayRental.BLL.Entity.Pays>, HoliDayRental.BLL.Service.>();
-            services.AddScoped<HoliDayRental.Common.Repository.IMembreRepository<HoliDayRental.DAL.Entite.Pays>, HoliDayRental.DAL.Repository.PaysService>();
+            services.AddScoped<HoliDayRental.Common.Repository.IPaysRepository<HoliDayRental.DAL.Entity.Pays>, HoliDayRental.DAL.Repository.PaysService>();
+            //services.AddScoped<HoliDayRental.Common.Repository.IGetRepository<HoliDayRental.DAL.Entity.Pays, int>, HoliDayRental.DAL.Repository.PaysService>();
+            services.AddScoped<HoliDayRental.Common.Repository.IPaysRepository<HoliDayRental.BLL.Entity.Pays>, HoliDayRental.BLL.Service.PaysService>();
+
 
         }
 

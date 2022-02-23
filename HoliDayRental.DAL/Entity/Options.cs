@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace HoliDayRental.DAL.Entite
+namespace HoliDayRental.DAL.Entity
 {
     public class Options
     {

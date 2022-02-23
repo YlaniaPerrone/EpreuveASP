@@ -12,10 +12,10 @@ namespace HoliDayRental.BLL.Service
     public class BienEchangeService : IBienEchangeRepository<HoliDayRental.BLL.Entity.BienEchange>
 
     {
-        private readonly IBienEchangeRepository<DAL.Entite.BienEchange> _bienEchangeRepository;
-        private readonly IMembreRepository<DAL.Entite.Membre> _membreRepository;
-        //private readonly IPaysRepository<DAL.Entite.Pays> _paysRepository;
-        public BienEchangeService(IBienEchangeRepository<DAL.Entite.BienEchange> repository, IMembreRepository<DAL.Entite.Membre> repositoryMembre) //IPaysRepository<DAL.Entite.Pays> repositoryPays)
+        private readonly IBienEchangeRepository<DAL.Entity.BienEchange> _bienEchangeRepository;
+        private readonly IMembreRepository<DAL.Entity.Membre> _membreRepository;
+        //private readonly IPaysRepository<DAL.Entity.Pays> _paysRepository;
+        public BienEchangeService(IBienEchangeRepository<DAL.Entity.BienEchange> repository, IMembreRepository<DAL.Entity.Membre> repositoryMembre) //IPaysRepository<DAL.Entity.Pays> repositoryPays)
         {
             _bienEchangeRepository = repository;
             _membreRepository = repositoryMembre;

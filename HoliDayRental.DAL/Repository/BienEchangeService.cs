@@ -1,5 +1,5 @@
 ﻿using HoliDayRental.Common.Repository;
-using HoliDayRental.DAL.Entite;
+using HoliDayRental.DAL.Entity;
 using HoliDayRental.DAL.Handler;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Text;
 
 namespace HoliDayRental.DAL.Repository
 {
-    public class BienEchangeService : ConnectionBase, IBienEchangeRepository<HoliDayRental.DAL.Entite.BienEchange>
+    public class BienEchangeService : ConnectionBase, IBienEchangeRepository<HoliDayRental.DAL.Entity.BienEchange>
     {
         public void Delete(int id)
         {

@@ -1,4 +1,4 @@
-﻿using HoliDayRental.DAL.Entite;
+﻿using HoliDayRental.DAL.Entity;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -70,6 +70,16 @@ namespace HoliDayRental.DAL.Handler
                 Longitude = (string)record[nameof(BienEchange.Longitude)],
                 idMembre = (int)record[nameof(BienEchange.idMembre)],
                 DateCreation = (DateTime)record[nameof(BienEchange.DateCreation)],
+            };
+        }
+
+        public static Pays ToGetPays(IDataRecord record)
+        {
+            if (record is null) return null;
+            return new Pays
+            {
+                idPays  = (int)record[nameof(Pays.idPays)],
+                Libelle = (string)record[nameof(Pays.Libelle)],
             };
         }
 

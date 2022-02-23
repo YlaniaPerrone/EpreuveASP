@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Demo.CinemaProject.Common.Repositories
+namespace HoliDayRental.Common.Repository
 {
     public interface IRepository<TEntity, TId> : IGetRepository<TEntity, TId>
     {

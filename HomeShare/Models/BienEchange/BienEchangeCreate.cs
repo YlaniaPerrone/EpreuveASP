@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
@@ -23,10 +24,15 @@ namespace HoliDayRental.Models.BienEchange
         [Required]
         [DisplayName("NombrePerson")]
         public int NombrePerson { get; set; }
+        
+        [ScaffoldColumn(false)]
         [Required]
+        public int idPays { get; set; }
+        
+        [DisplayName("Pays")]
+        public IEnumerable<Payss.Pays> PaysList { get; set; }
 
-        //public IEnemurable<Pays> Pays { get; set; }
-        public int Pays { get; set; }
+        
         [Required]
         [DisplayName("Ville")]
         public string Ville { get; set; }
@@ -47,10 +53,11 @@ namespace HoliDayRental.Models.BienEchange
         [Required]
         [DisplayName("AssuranceObligatoire")]
         public bool AssuranceObligatoire { get; set; }
-        [Required]
-        [DisplayName("isEnabled")]
+        [ScaffoldColumn(false)]
         public bool isEnabled { get; set; }
         
+        [DataType(DataType.Date)]
+
         public DateTime? DisabledDate { get; set; }
         [Required]
         [DisplayName("Latitude")]
@@ -64,7 +71,8 @@ namespace HoliDayRental.Models.BienEchange
         //[ScaffoldColumn(false)]
 
         public int idMembre { get; set; }
-
+        
+        [ScaffoldColumn(false)]
         public DateTime DateCreation { get; set; }
     }
 }

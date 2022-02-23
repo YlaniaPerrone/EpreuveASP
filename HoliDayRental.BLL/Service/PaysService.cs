@@ -1,21 +1,25 @@
-﻿using Demo.CinemaProject.Common.Repositories;
+﻿using HoliDayRental.BLL.Entity;
 using HoliDayRental.BLL.Handlers;
-using HoliDayRental.DAL.Entite;
+using HoliDayRental.Common.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+
+
 namespace HoliDayRental.BLL.Service
 {
-    public class PaysService : IGetRepository<HoliDayRental.DAL.Entite.Pays, int>
+    public class PaysService : IPaysRepository<HoliDayRental.BLL.Entity.Pays> //IGetRepository<HoliDayRental.BLL.Entity.Pays, int> 
     {
-        private readonly IGetRepository<HoliDayRental.DAL.Entite.Pays, int> _repository;
+        private readonly IPaysRepository<HoliDayRental.DAL.Entity.Pays> _repository;
 
-        public PaysService(IGetRepository<HoliDayRental.DAL.Entite.Pays, int> repository)
+        public PaysService(IPaysRepository<HoliDayRental.DAL.Entity.Pays> repository)
         {
             _repository = repository;
         }
+
+
         public Pays Get(int id)
         {
             return _repository.Get(id).ToBLL();
@@ -24,7 +28,7 @@ namespace HoliDayRental.BLL.Service
         public IEnumerable<Pays> Get()
         {
             return _repository.Get().Select(p => p.ToBLL());
-
         }
+        
     }
 }

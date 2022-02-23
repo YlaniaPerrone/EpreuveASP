@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Demo.CinemaProject.Common.Repositories
+namespace HoliDayRental.Common.Repository
 {
     public interface IGetRepository<TEntity, TId>
     {
-        TEntity Get(TId id);
+        TEntity Get(TId id);    
         IEnumerable<TEntity> Get();
     }
 }

@@ -9,10 +9,10 @@ namespace HoliDayRental.BLL.Entity
          public int idPays { get; set; }
         public string Libelle { get; set; }
 
-        public Pays(int id_Pays, string libelle)
-        {
-            idPays = id_Pays;
-            Libelle = libelle;          
-        }
+        //public Pays(int id_Pays, string libelle)
+        //{
+        //    idPays = id_Pays;
+        //    Libelle = libelle;
+        //}
     }
 }

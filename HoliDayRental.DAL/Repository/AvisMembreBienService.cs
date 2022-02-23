@@ -1,5 +1,5 @@
 ﻿using HoliDayRental.Common.Repository;
-using HoliDayRental.DAL.Entite;
+using HoliDayRental.DAL.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;

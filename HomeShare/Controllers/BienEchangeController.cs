@@ -1,6 +1,7 @@
 ﻿using HoliDayRental.Common.Repository;
 using HoliDayRental.Handlers;
 using HoliDayRental.Models.BienEchange;
+using HoliDayRental.Models.Payss;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -16,8 +17,8 @@ namespace HoliDayRental.Controllers
 
 
         // GET: BienEchange
-        public BienEchangeController(IBienEchangeRepository<HoliDayRental.BLL.Entity.BienEchange> bienEchangeService, IPaysRepository<HoliDayRental.BLL.Entity.Pays> paysService)  
-        {
+        public BienEchangeController(IBienEchangeRepository<HoliDayRental.BLL.Entity.BienEchange> bienEchangeService, IPaysRepository<HoliDayRental.BLL.Entity.Pays> paysService)
+        { 
             _bienService = bienEchangeService;
             _paysService = paysService;
         }
@@ -40,7 +41,9 @@ namespace HoliDayRental.Controllers
         {
             //IEnumerable<ITLang> language = _langService.Get();
             BienEchangeCreate bien = new BienEchangeCreate();
-
+            bien.PaysList = _paysService.Get().Select(b => b.ToListPays());
+            bien.DateCreation = DateTime.Now;
+            bien.isEnabled = true;
             return View(bien);
         }
 
@@ -58,21 +61,19 @@ namespace HoliDayRental.Controllers
                 collection.DescCourte,
                 collection.DescLong,
                 collection.NombrePerson,
-                collection.Pays,
+                collection.idPays,
                 collection.Ville,
                 collection.Rue,
                 collection.Numero,
                 collection.CodePostal,
                 collection.Photo,
                 collection.AssuranceObligatoire,
-                collection.isEnabled,
+                collection.isEnabled = true,
                 collection.DisabledDate,
-                collection.DateCreation,
+                collection.DateCreation = DateTime.Now,
                 collection.Latitude,
                 collection.Longitude,
                 collection.idMembre
-
-
                 )
                 { };
                 this._bienService.Insert(result);
@@ -88,21 +89,46 @@ namespace HoliDayRental.Controllers
         // GET: BienEchange/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            BienEdit model = _bienService.Get(id).ToBienEdit();
+            model.PaysList = _paysService.Get().Select(b => b.ToListPays());
+            return View(model);
         }
-
+        
         // POST: BienEchange/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, BienEdit collection)
         {
+            HoliDayRental.BLL.Entity.BienEchange result = this._bienService.Get(id);
             try
             {
+                if (result is null) throw new Exception("Pas de résultat avec cet identifiant");
+                if (!(ModelState.IsValid)) throw new Exception();
+                result.idBien = collection.idBien;
+                result.titre = collection.titre;
+                result.DescCourte = collection.DescCourte;
+                result.DescLong = collection.DescLong;
+                result.NombrePerson = collection.NombrePerson;
+                result.idPays = collection.Pays;
+                result.Ville = collection.Ville;
+                result.Rue = collection.Rue;
+                result.Numero = collection.Numero;
+                result.CodePostal = collection.CodePostal;
+                result.Photo = collection.Photo;
+                result.AssuranceObligatoire = collection.AssuranceObligatoire;
+                result.isEnabled = collection.isEnabled;
+                result.DisabledDate = collection.DisabledDate;
+                result.Latitude = collection.Latitude;
+                result.Longitude = collection.Longitude;
+            
+                
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch (Exception e)
             {
-                return View();
+                ViewBag.Errors = e.Message;
+                if (result is null) return RedirectToAction(nameof(Index));
+                return View(result.ToBienEdit());
             }
         }
 

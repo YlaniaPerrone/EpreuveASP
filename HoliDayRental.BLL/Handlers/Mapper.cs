@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using B = HoliDayRental.BLL.Entity;
-using D = HoliDayRental.DAL.Entite;
+using D = HoliDayRental.DAL.Entity;
 
 namespace HoliDayRental.BLL.Handlers
 {
@@ -18,7 +18,7 @@ namespace HoliDayRental.BLL.Handlers
         }
 
 
-        public static HoliDayRental.DAL.Entite.Options ToDAL(this HoliDayRental.BLL.Entity.Options entity)
+        public static HoliDayRental.DAL.Entity.Options ToDAL(this HoliDayRental.BLL.Entity.Options entity)
         {
             if (entity == null) return null;
             return new D.Options
@@ -114,10 +114,11 @@ namespace HoliDayRental.BLL.Handlers
         public static B.Pays ToBLL(this D.Pays entity)
         {
             if (entity == null) return null;
-            return new B.Pays(
-               entity.idPays,
-               entity.Libelle
-                );
+            return new B.Pays
+            {
+                idPays = entity.idPays,
+                Libelle = entity.Libelle
+            };
         }
 
         public static D.Pays ToDALL(this B.Pays entity)
@@ -128,7 +129,6 @@ namespace HoliDayRental.BLL.Handlers
                 idPays = entity.idPays,
                 Libelle = entity.Libelle
            
-
             };
         }
 
