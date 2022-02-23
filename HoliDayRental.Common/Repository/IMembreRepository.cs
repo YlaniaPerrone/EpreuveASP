@@ -5,8 +5,8 @@ using System.Text;
 
 namespace HoliDayRental.Common.Repository
 {
-    public interface IMembreRepository<Membre> : IGetRepository<Membre, int>
+    public interface IMembreRepository<Membre> : IRepository<Membre, int>
     {
-
+        
     }
 }

@@ -16,10 +16,12 @@ namespace HoliDayRental.Models.Membre
         public string Prenom { get; set; }
         [Required]
         [EmailAddress(ErrorMessage = "L'adresse n'est au bon format.")]
+        [DataType(DataType.EmailAddress)]
         [DisplayName("Email")]
         public string Email { get; set; }
         public int Pays { get; set; }
         [Required]
+        [DataType(DataType.PhoneNumber)]
         [DisplayName("Telephone")]
         public string Telephone { get; set; }
         [Required]
