@@ -32,24 +32,25 @@ namespace HoliDayRental.BLL.Handlers
         {
             if (entity == null) return null;
             return new B.BienEchange(
-                entity.idBien,
-                entity.titre,
-                entity.DescCourte,
-                entity.DescLong,
-                entity.NombrePerson,
-                entity.Pays,
-                entity.Ville,
-                entity.Rue,
-                entity.Numero,
-                entity.CodePostal,
-                entity.Photo,
-                entity.AssuranceObligatoire,
-                entity.isEnabled,
-                entity.DisabledDate,
-                entity.Latitude,
-                entity.Longitude,
-                entity.idMembre,
-                entity.DateCreation
+             entity.idBien,
+             entity.titre,
+             entity.DescCourte,
+             entity.DescLong,
+            entity.NombrePerson,
+            entity.Pays,
+            entity.Ville,
+            entity.Rue,
+            entity.Numero,
+            entity.CodePostal,
+            entity.Photo,
+            entity.AssuranceObligatoire,
+            entity.isEnabled,
+            //entity.DisabledDate,
+            entity.Latitude,
+            entity.Longitude,
+            entity.idMembre
+            //entity.DateCreation
+
 
                 );
         }
@@ -72,7 +73,7 @@ namespace HoliDayRental.BLL.Handlers
                 Photo = entity.Photo,
                 AssuranceObligatoire = entity.AssuranceObligatoire,
                 isEnabled = entity.isEnabled,
-                DisabledDate = entity.DisabledDate,
+                //DisabledDate = entity.DisabledDate,
                 Latitude = entity.Latitude,
                 Longitude = entity.Longitude,
                 idMembre = entity.Membre.idMembre,

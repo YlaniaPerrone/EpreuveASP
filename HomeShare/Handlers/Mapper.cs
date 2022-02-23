@@ -11,7 +11,21 @@ namespace HoliDayRental.Handlers
                 idBien = entity.idBien,
                 titre = entity.titre,
                 DescCourte = entity.DescCourte,
-                DescLong = entity.DescLong
+                DescLong = entity.DescLong,
+                NombrePerson = entity.NombrePerson,
+                Pays = entity.idPays,
+                Ville = entity.Ville,
+                Rue = entity.Rue,
+                Numero = entity.Numero,
+                CodePostal =  entity.CodePostal,
+                Photo = entity.Photo,
+                AssuranceObligatoire = entity.AssuranceObligatoire,
+                isEnabled = entity.isEnabled,
+                DisabledDate = entity.DisabledDate,
+                Latitude = entity.Latitude,
+                Longitude = entity.Longitude,
+                idMembre =  entity.idMembre,
+                DateCreation = entity.DateCreation,
             };
         }
     }
