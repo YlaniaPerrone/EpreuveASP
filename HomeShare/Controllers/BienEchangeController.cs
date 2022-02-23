@@ -12,11 +12,14 @@ namespace HoliDayRental.Controllers
     public class BienEchangeController : Controller
     {
         private readonly IBienEchangeRepository<HoliDayRental.BLL.Entity.BienEchange> _bienService;
+        private readonly IPaysRepository<HoliDayRental.BLL.Entity.Pays> _paysService;
+
 
         // GET: BienEchange
-        public BienEchangeController(IBienEchangeRepository<HoliDayRental.BLL.Entity.BienEchange> bienEchangeService)  
+        public BienEchangeController(IBienEchangeRepository<HoliDayRental.BLL.Entity.BienEchange> bienEchangeService, IPaysRepository<HoliDayRental.BLL.Entity.Pays> paysService)  
         {
             _bienService = bienEchangeService;
+            _paysService = paysService;
         }
         public ActionResult Index()
         {
@@ -29,14 +32,27 @@ namespace HoliDayRental.Controllers
         {
             
             BienDetails model = _bienService.Get(id).ToDetails();
-            return View(model);
+           return View(model);
         }
 
         // GET: BienEchange/Create
+        public ActionResult Create()
+        {
+            //IEnumerable<ITLang> language = _langService.Get();
+            BienEchangeCreate bien = new BienEchangeCreate();
+
+            return View(bien);
+        }
+
+        // POST: BienEchange/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(BienEchangeCreate collection)
         {
-            BienEchangeCreate bien  = new BienEchangeCreate();
-            HoliDayRental.BLL.Entity.BienEchange result = new BLL.Entity.BienEchange(
+            try
+            {
+                if (!ModelState.IsValid) throw new Exception();
+                HoliDayRental.BLL.Entity.BienEchange result = new BLL.Entity.BienEchange(
                 0,
                 collection.titre,
                 collection.DescCourte,
@@ -50,54 +66,22 @@ namespace HoliDayRental.Controllers
                 collection.Photo,
                 collection.AssuranceObligatoire,
                 collection.isEnabled,
+                collection.DisabledDate,
                 collection.DateCreation,
                 collection.Latitude,
                 collection.Longitude,
-                collection.idBien
-                );
-            {
-                
-                //idBien = collection.idBien,
-                //titre = collection.titre,
-                //DescCourte = collection.DescCourte,
-                //DescLong   = collection.DescLong,
-                //NombrePerson = collection.NombrePerson,
-                //idPays = collection.Pays,
-                //Ville = collection.Ville,
-                //Rue = collection.Rue,
-                //Numero = collection.Numero,
-                //CodePostal = collection.CodePostal,
-                //Photo = collection.Photo,
-                //AssuranceObligatoire =  collection.AssuranceObligatoire,
-                //isEnabled = collection.isEnabled,
-                ////DisabledDate = collection.DisabledDate,
-                //Latitude = collection.Latitude,
-                //Longitude = collection.Longitude,
-                //idMembre = collection.idMembre,
-                ////DateCreation = collection.DateCreation,
+                collection.idMembre
 
-            };
-            return View(bien);
-        }
 
-        // POST: BienEchange/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                if (!ModelState.IsValid) throw new Exception();
-                //HoliDayRental.BLL.Entity.BienEchange result = new HoliDayRental.BLL.Entity.BienEchange()
-                //{
-                //    idBien = collection.idBien,
-
-                //}
-                return View();
+                )
+                { };
+                this._bienService.Insert(result);
+                return RedirectToAction(nameof(Index));
             }
-            catch
+            catch (Exception e)
             {
-                return View();
+                ViewBag.Error = e.Message;
+                return View(collection);
             }
         }
 

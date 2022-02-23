@@ -30,7 +30,7 @@ namespace HoliDayRental.BLL.Entity
         public Membre Membre { get; set; }
 
 
-        public BienEchange(int id, string title, string descCourte, string descLong, int nbrePerson, Pays pays, string ville, string rue, string numero, string codePostale, string photo, bool assurance, bool enabed, DateTime date,   string latitude, string longitude,  Membre membre)
+        public BienEchange(int id, string title, string descCourte, string descLong, int nbrePerson, Pays pays, string ville, string rue, string numero, string codePostale, string photo, bool assurance, bool enabed, DateTime? dateDisable, DateTime date,   string latitude, string longitude,  Membre membre)
         {
            
             idBien = id;
@@ -48,6 +48,7 @@ namespace HoliDayRental.BLL.Entity
             Photo = photo;
             AssuranceObligatoire = assurance;
             isEnabled = enabed;
+            DisabledDate = dateDisable;
             DateCreation = date;
             Latitude = latitude;
             Longitude = longitude;
@@ -57,7 +58,7 @@ namespace HoliDayRental.BLL.Entity
             idMembre = membre.idMembre;
         }
 
-        public BienEchange(int id, string title, string descCourte, string descLong, int nbrePerson, int Id_pays, string ville, string rue, string num, string codePostal, string photo, bool assurance, bool enabed, DateTime date , string latitude, string longitude, int id_membre)
+        public BienEchange(int id, string title, string descCourte, string descLong, int nbrePerson, int Id_pays, string ville, string rue, string num, string codePostal, string photo, bool assurance, bool enabed, DateTime? dateDisable, DateTime date , string latitude, string longitude, int id_membre)
         {
             idBien = id;
             titre = title;
@@ -71,6 +72,7 @@ namespace HoliDayRental.BLL.Entity
             Photo = photo;
             AssuranceObligatoire = assurance;
             isEnabled = enabed;
+            DisabledDate = dateDisable;
             DateCreation = date;
             Latitude = latitude;
             Longitude = longitude;

@@ -37,18 +37,18 @@ namespace HoliDayRental
             services.AddControllersWithViews();
 
             
-
+            //service bien
             services.AddScoped<HoliDayRental.Common.Repository.IBienEchangeRepository<HoliDayRental.DAL.Entite.BienEchange>, HoliDayRental.DAL.Repository.BienEchangeService>();
             services.AddScoped<HoliDayRental.Common.Repository.IBienEchangeRepository<HoliDayRental.BLL.Entity.BienEchange>, HoliDayRental.BLL.Service.BienEchangeService>();
 
+            //service membre
             services.AddScoped<HoliDayRental.Common.Repository.IMembreRepository<HoliDayRental.BLL.Entity.Membre>, HoliDayRental.BLL.Service.MembreService>();
             services.AddScoped<HoliDayRental.Common.Repository.IMembreRepository<HoliDayRental.DAL.Entite.Membre>,  HoliDayRental.DAL.Repository.MembreService>();
 
-            
+            //service pays
+            services.AddScoped<HoliDayRental.Common.Repository.IMembreRepository<HoliDayRental.BLL.Entity.Pays>, HoliDayRental.BLL.Service.>();
+            services.AddScoped<HoliDayRental.Common.Repository.IMembreRepository<HoliDayRental.DAL.Entite.Pays>, HoliDayRental.DAL.Repository.PaysService>();
 
-
-            // services.AddScoped<IDeveloperRepository<DAL.Entities.ITLang>, DAL.Repositories.ITLangService>();
-           //  services.AddScoped<IDeveloperRepository<ITLang>, ITLangService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

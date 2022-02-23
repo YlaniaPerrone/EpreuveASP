@@ -24,7 +24,8 @@ namespace HoliDayRental.Models.BienEchange
         [DisplayName("NombrePerson")]
         public int NombrePerson { get; set; }
         [Required]
-        [DisplayName("Pays")]
+
+        //public IEnemurable<Pays> Pays { get; set; }
         public int Pays { get; set; }
         [Required]
         [DisplayName("Ville")]
@@ -59,6 +60,9 @@ namespace HoliDayRental.Models.BienEchange
         public string Longitude { get; set; }
         [Required]
         [DisplayName("idMembre")]
+
+        //[ScaffoldColumn(false)]
+
         public int idMembre { get; set; }
 
         public DateTime DateCreation { get; set; }

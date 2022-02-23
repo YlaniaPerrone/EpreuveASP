@@ -45,15 +45,12 @@ namespace HoliDayRental.BLL.Handlers
             entity.Photo,
             entity.AssuranceObligatoire,
             entity.isEnabled,
-            //entity.DisabledDate,
+            entity.DisabledDate,
             entity.DateCreation,
             entity.Latitude,
             entity.Longitude,
             entity.idMembre
-            
-
-
-                );
+            );
         }
 
         public static D.BienEchange ToDALL(this B.BienEchange entity)
@@ -74,11 +71,11 @@ namespace HoliDayRental.BLL.Handlers
                 Photo = entity.Photo,
                 AssuranceObligatoire = entity.AssuranceObligatoire,
                 isEnabled = entity.isEnabled,
-                //DisabledDate = entity.DisabledDate,
+                DisabledDate = entity.DisabledDate,
+                DateCreation = entity.DateCreation,
                 Latitude = entity.Latitude,
                 Longitude = entity.Longitude,
-                idMembre = entity.Membre.idMembre,
-                DateCreation = entity.DateCreation
+                idMembre = entity.Membre.idMembre
             };
         }
 
@@ -111,6 +108,27 @@ namespace HoliDayRental.BLL.Handlers
                 Password = entity.Password,
                 Pays = entity.pays.idPays
                                
+            };
+        }
+
+        public static B.Pays ToBLL(this D.Pays entity)
+        {
+            if (entity == null) return null;
+            return new B.Pays(
+               entity.idPays,
+               entity.Libelle
+                );
+        }
+
+        public static D.Pays ToDALL(this B.Pays entity)
+        {
+            if (entity == null) return null;
+            return new D.Pays
+            {
+                idPays = entity.idPays,
+                Libelle = entity.Libelle
+           
+
             };
         }
 

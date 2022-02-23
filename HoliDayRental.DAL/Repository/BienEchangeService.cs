@@ -110,11 +110,11 @@ namespace HoliDayRental.DAL.Repository
                     command.Parameters.Add(p_codePostal);
                     SqlParameter p_photo = new SqlParameter("Photo", entity.Photo);
                     command.Parameters.Add(p_photo);
-                    SqlParameter p_assuranceObligatoire = new SqlParameter { ParameterName = "AssuranceObligatoire", Value = (object)entity.AssuranceObligatoire ?? DBNull.Value} ;
+                    SqlParameter p_assuranceObligatoire = new SqlParameter("AssuranceObligatoire", entity.AssuranceObligatoire);
                     command.Parameters.Add(p_assuranceObligatoire);
-                    SqlParameter p_isEnabled = new SqlParameter("isEnabled", entity.isEnabled);
+                    SqlParameter p_isEnabled = new SqlParameter("isEnabled", entity.CodePostal);
                     command.Parameters.Add(p_isEnabled);
-                    SqlParameter p_disabledDate = new SqlParameter("DisabledDate", entity.DisabledDate);
+                    SqlParameter p_disabledDate = new SqlParameter { ParameterName = "DisabledDate", Value = (object)entity.DisabledDate ?? DBNull.Value };
                     command.Parameters.Add(p_disabledDate);
                     SqlParameter p_latitude = new SqlParameter("Latitude", entity.Latitude);
                     command.Parameters.Add(p_latitude);
