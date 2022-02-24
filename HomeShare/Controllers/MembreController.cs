@@ -25,7 +25,7 @@ namespace HoliDayRental.Controllers
         public ActionResult Index()
         {
             IEnumerable<MembreItem> model = _membreService.Get().Select(b => b.ToListMembre());
-            model = model.Select(m => { m.idPays = _membreService.Get((int)m.idPays).ToListPays(); return m; });
+            // model = model.Select(m => { m. = _membreService.Get((int)m.idPays).ToListPays(); return m; });
             return View(model);
         }
 
@@ -51,16 +51,15 @@ namespace HoliDayRental.Controllers
             try
             {
                 if (!ModelState.IsValid) throw new Exception();
-                HoliDayRental.BLL.Entity.Membre result = new BLL.Entity.Membre(
-                    0,
-                    collection.Nom,
-                    collection.Prenom,
-                    collection.Email,
-                    collection.Pays,
-                    collection.Telephone,
-                    collection.Login,
-                    collection.Password
-                ) { };
+                HoliDayRental.BLL.Entity.Membre result = new BLL.Entity.Membre
+                {
+                    idMembre = collection.idMembre,
+                    Nom = collection.Nom,
+                    Prenom = collection.Prenom,
+                    Telephone = collection.Telephone,
+                    Login =  collection.Login,
+                    Password = collection.Telephone
+                };
                 this._membreService.Insert(result);
                 return RedirectToAction(nameof(Index));
             }
@@ -75,7 +74,9 @@ namespace HoliDayRental.Controllers
         // GET: MembreController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            MembreEdit model = _membreService.Get(id).ToEditMembre();
+            // model.PaysList = _paysService.Get().Select(b => b.ToListPays());
+            return View(model);
         }
 
         // POST: MembreController/Edit/5

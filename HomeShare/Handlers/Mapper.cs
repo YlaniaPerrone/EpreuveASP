@@ -100,7 +100,7 @@ namespace HoliDayRental.Handlers
                
             };
         }
-        public static MembreEdit TEditMembre(this HoliDayRental.BLL.Entity.Membre entity)
+        public static MembreEdit ToEditMembre(this HoliDayRental.BLL.Entity.Membre entity)
         {
             if (entity == null) return null;
             return new MembreEdit
