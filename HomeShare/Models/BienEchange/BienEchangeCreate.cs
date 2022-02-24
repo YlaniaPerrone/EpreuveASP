@@ -29,11 +29,11 @@ namespace HoliDayRental.Models.BienEchange
         
         [ScaffoldColumn(false)]
       public int idPays { get; set; }
-        
-        [DisplayName("Pays")]
+
+        [ScaffoldColumn(false)]
         public IEnumerable<Payss.Pays> PaysList { get; set; }
 
-        
+
         [Required]
         [DisplayName("Ville")]
         public string Ville { get; set; }
@@ -46,6 +46,7 @@ namespace HoliDayRental.Models.BienEchange
         public string Numero { get; set; }
         
         [Required]
+        [MaxLength(6)]
         [DisplayName("CodePostal")]
         public string CodePostal { get; set; }
         
@@ -70,11 +71,14 @@ namespace HoliDayRental.Models.BienEchange
         [Required]
         [DisplayName("idMembre")]
 
-        //[ScaffoldColumn(false)]
-
+        [ScaffoldColumn(false)]
         public int idMembre { get; set; }
         
+        // [ScaffoldColumn(false)]
+        // public IEnumerable<Models.Membre> listMembre { get; set; }
+
         [ScaffoldColumn(false)]
+        [DataType(DataType.Date)]
         public DateTime DateCreation { get; set; }
     }
 }

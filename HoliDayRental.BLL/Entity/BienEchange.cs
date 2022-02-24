@@ -56,9 +56,7 @@ namespace HoliDayRental.BLL.Entity
             if (membre == null) throw new ArgumentNullException(nameof(idMembre));
             idMembre = membre.idMembre;
             DateCreation = date;
-            
-         
-           
+       
         }
 
         public BienEchange(int id, string title, string descCourte, string descLong, int nbrePerson, int Id_pays, string ville, string rue, string numero, string codePostale, string photo, bool assurance, bool enabed, DateTime? dateDisable, string latitude, string longitude, int id_membre, DateTime date)

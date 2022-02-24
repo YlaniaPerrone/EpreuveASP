@@ -18,7 +18,7 @@ namespace HoliDayRental.Handlers
                 DescCourte = entity.DescCourte,
                 DescLong = entity.DescLong,
                 NombrePerson = entity.NombrePerson,
-                Pays = entity.idPays,
+                idPays = entity.idPays,
                 Ville = entity.Ville,
                 Rue = entity.Rue,
                 Numero = entity.Numero,

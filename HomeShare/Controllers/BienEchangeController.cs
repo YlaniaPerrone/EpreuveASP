@@ -1,7 +1,7 @@
 ﻿using HoliDayRental.Common.Repository;
 using HoliDayRental.Handlers;
 using HoliDayRental.Models.BienEchange;
-using HoliDayRental.Models.Payss;
+//using HoliDayRental.Models.Payss;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -14,20 +14,24 @@ namespace HoliDayRental.Controllers
     {
         private readonly IBienEchangeRepository<HoliDayRental.BLL.Entity.BienEchange> _bienService;
         private readonly IPaysRepository<HoliDayRental.BLL.Entity.Pays> _paysService;
+        // private readonly IMembreRepository<HoliDayRental.BLL.Entity.Membre> _membreService;
+        
 
 
         // GET: BienEchange
-        public BienEchangeController(IBienEchangeRepository<HoliDayRental.BLL.Entity.BienEchange> bienEchangeService, IPaysRepository<HoliDayRental.BLL.Entity.Pays> paysService)
+        public BienEchangeController(IBienEchangeRepository<HoliDayRental.BLL.Entity.BienEchange> bienEchangeService, IPaysRepository<HoliDayRental.BLL.Entity.Pays> paysService) //, IMembreRepository<HoliDayRental.BLL.Entity.Membre> membreService
         { 
             _bienService = bienEchangeService;
             _paysService = paysService;
+            // _membreService = membreService;
         }
         public ActionResult Index()
         {
             IEnumerable<BienEchangeItem> model = _bienService.Get().Select(b => b.ToListItem());
+            model = model.Select(m => { m.Pays = _paysService.Get((int)m.idPays).ToListPays(); return m; });
             return View(model);
         }
-
+            
         // GET: BienEchange/Details/5
         public ActionResult Details(int id)
         {
@@ -41,6 +45,7 @@ namespace HoliDayRental.Controllers
         {
             BienEchangeCreate bien = new BienEchangeCreate();
             bien.PaysList = _paysService.Get().Select(b => b.ToListPays());
+            // bien. = _paysService.Get().Select(b => b.ToListPays());
             bien.DateCreation = DateTime.Now;
             bien.isEnabled = true;
             return View(bien);
@@ -53,6 +58,7 @@ namespace HoliDayRental.Controllers
         {
             try
             {
+                
                 if (!ModelState.IsValid) throw new Exception("ops a error !!");
                 HoliDayRental.BLL.Entity.BienEchange result = new BLL.Entity.BienEchange(
                 0,
@@ -72,8 +78,10 @@ namespace HoliDayRental.Controllers
                 collection.Latitude,
                 collection.Longitude,
                 collection.idMembre,
-                collection.DateCreation
-               ) { };
+                DateTime.Now
+               );
+                {
+                };
                 this._bienService.Insert(result);
                 return RedirectToAction(nameof(Index));
             }
@@ -81,6 +89,7 @@ namespace HoliDayRental.Controllers
             {
                 ViewBag.Error = e.Message;
                 collection.PaysList = _paysService.Get().Select(b => b.ToListPays());
+                collection.DateCreation = DateTime.Now;
                 return View(collection);
             }
         }

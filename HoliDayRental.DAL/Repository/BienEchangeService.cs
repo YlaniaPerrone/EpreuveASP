@@ -138,8 +138,8 @@ namespace HoliDayRental.DAL.Repository
                 using (SqlCommand command = connection.CreateCommand())
                 {
                     command.CommandText = "UPDATE SET  [titre] = @titre, [DescCourte]= @DescCourte, [DescLong] = @DescLong, [NombrePerson]= @NombrePerson, [Pays] = @Pays, [Ville] = @Ville , [Rue] = @Rue , [Numero] = @Numero , [CodePostal] = @CodePostal, [AssuranceObligatoire] = @AssuranceObligatoire , [isEnabled] = @isEnabled, [DisabledDate] = @DisabledDate, [Latitude] = @Latitude, [Longitude] = @Longitude, [idMembre] = @idMembre, [DateCreation] = @DateCreation  WHERE [idBien] = @id";
-                    SqlParameter p_id = new SqlParameter("idBien", entity.idBien);
-                    command.Parameters.Add(p_id);
+                    // SqlParameter p_id = new SqlParameter("idBien", entity.idBien);
+                    // command.Parameters.Add(p_id);
                     SqlParameter p_titre = new SqlParameter("titre", entity.titre);
                     command.Parameters.Add(p_titre);
                     SqlParameter p_descCourte = new SqlParameter("DescCourte", entity.DescCourte);

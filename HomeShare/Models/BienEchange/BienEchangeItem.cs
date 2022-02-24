@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HoliDayRental.Models.Payss;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -14,8 +15,9 @@ namespace HoliDayRental.Models.BienEchange
         public string DescLong { get; set; }
         public int NombrePerson { get; set; }
 
-        //public IEnumerable<Pays> Pays {get; set;}
-        public int Pays { get; set; }
+        public int idPays { get; set; }
+        public Pays Pays { get; set; }
+
         public string Ville { get; set; }
         public string Rue { get; set; }
 
