@@ -133,8 +133,7 @@ namespace HoliDayRental.Handlers
 
             };
         }
-
-
+        
         //Pays
         public static Pays ToListPays(this HoliDayRental.BLL.Entity.Pays entity)
         {
