@@ -31,8 +31,7 @@ namespace HoliDayRental.DAL.Repository
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "SELECT [idMembre],[Nom],[Prenom],[Email],[Pays],[Telephone],[Login],[Password] " +
-                        " FROM [Membre] WHERE [idMembre] = @id";
+                    command.CommandText = "SELECT [idMembre],[Nom],[Prenom],[Email],[Pays],[Telephone],[Login],[Password] FROM [Membre] WHERE [idMembre] = @id";
                     //Parameters...
                     SqlParameter p_id = new SqlParameter("id", id);
                     command.Parameters.Add(p_id);
@@ -51,8 +50,7 @@ namespace HoliDayRental.DAL.Repository
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "SELECT [idMembre],[Nom],[Prenom],[Email],[Pays],[Telephone],[Login],[Password] " +
-                        " FROM [Membre]";
+                    command.CommandText = "SELECT [idMembre],[Nom],[Prenom],[Email],[Pays],[Telephone],[Login],[Password] FROM [Membre]";
                     //Parameters...
                     connection.Open();
                     //Choose Execution method

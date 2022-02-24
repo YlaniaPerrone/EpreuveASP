@@ -33,8 +33,7 @@ namespace HoliDayRental.DAL.Repository
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "SELECT [idBien], [titre], [DescCourte], [DescLong], [NombrePerson], [Pays], [Ville], [Rue], [Numero], [CodePostal], [Photo], [AssuranceObligatoire], [isEnabled], [DisabledDate], [Latitude], [Longitude], [idMembre], [DateCreation] " +
-                        " FROM [BienEchange] WHERE [idBien] = @id";
+                    command.CommandText = "SELECT [idBien], [titre], [DescCourte], [DescLong], [NombrePerson], [Pays], [Ville], [Rue], [Numero], [CodePostal], [Photo], [AssuranceObligatoire], [isEnabled], [DisabledDate], [Latitude], [Longitude], [idMembre], [DateCreation] FROM [BienEchange] WHERE [idBien] = @id";
                     //Parameters...
                     SqlParameter p_id = new SqlParameter("id", id);
                     command.Parameters.Add(p_id);
@@ -86,8 +85,7 @@ namespace HoliDayRental.DAL.Repository
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "INSERT INTO [BienEchange]([titre], [DescCourte], [DescLong], [NombrePerson], [Pays], [Ville], [Rue], [Numero], [CodePostal], [Photo], [AssuranceObligatoire], [isEnabled], [DisabledDate], [Latitude], [Longitude], [idMembre], [DateCreation]) " +
-                        " OUTPUT [inserted].[idBien] VALUES ( @titre, @DescCourte, @DescLong, @NombrePerson, @Pays, @Ville, @Rue, @Numero, @CodePostal, @Photo, @AssuranceObligatoire, @isEnabled, @DisabledDate, @Latitude, @Longitude, @idMembre, @DateCreation)";
+                    command.CommandText = "INSERT INTO [BienEchange]([titre], [DescCourte], [DescLong], [NombrePerson], [Pays], [Ville], [Rue], [Numero], [CodePostal], [Photo], [AssuranceObligatoire], [isEnabled], [DisabledDate], [Latitude], [Longitude], [idMembre], [DateCreation]) OUTPUT [inserted].[idBien] VALUES ( @titre, @DescCourte, @DescLong, @NombrePerson, @Pays, @Ville, @Rue, @Numero, @CodePostal, @Photo, @AssuranceObligatoire, @isEnabled, @DisabledDate, @Latitude, @Longitude, @idMembre, @DateCreation)";
                     // SqlParameter p_id = new SqlParameter("idBien", entity.idBien);
                     // command.Parameters.Add(p_id);
                     SqlParameter p_titre = new SqlParameter("titre", entity.titre);

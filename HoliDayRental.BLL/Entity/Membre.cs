@@ -15,33 +15,33 @@ namespace HoliDayRental.BLL.Entity
         public string Login { get; set; }
         public string Password { get; set; }
 
-        public Pays pays { get; set; }
+        // public Pays pays { get; set; }
 
-        public Membre(int id_Membre, string nom, string prenom, string email, string telephone, string login, string password, Pays pays)
-        {
-            idMembre = id_Membre;
-            Nom = nom;
-            Prenom = prenom;
-            Email = email;
-            Telephone = telephone;
-            Login = login;
-            Password = password;
-            //Pays = pays;
-            //if (pays == null) throw new ArgumentNullException(nameof(idPays));
-            //idPays = pays.idPays;
-        }
-
-        public Membre(int id_Membre, string nom, string prenom, string email, int id_Pays, string telephone, string login, string password)
-        {
-            idMembre = id_Membre;
-            Nom = nom;
-            Prenom = prenom;
-            Email = email;
-            idPays = id_Pays;
-            Telephone = telephone;
-            Login = login;
-            Password = password;
-        }
+        // public Membre(int id_Membre, string nom, string prenom, string email, string telephone, string login, string password, Pays pays)
+        // {
+        //     idMembre = id_Membre;
+        //     Nom = nom;
+        //     Prenom = prenom;
+        //     Email = email;
+        //     Telephone = telephone;
+        //     Login = login;
+        //     Password = password;
+        //     //Pays = pays;
+        //     //if (pays == null) throw new ArgumentNullException(nameof(idPays));
+        //     //idPays = pays.idPays;
+        // }
+        //
+        // public Membre(int id_Membre, string nom, string prenom, string email, int id_Pays, string telephone, string login, string password)
+        // {
+        //     idMembre = id_Membre;
+        //     Nom = nom;
+        //     Prenom = prenom;
+        //     Email = email;
+        //     idPays = id_Pays;
+        //     Telephone = telephone;
+        //     Login = login;
+        //     Password = password;
+        // }
 
       
 

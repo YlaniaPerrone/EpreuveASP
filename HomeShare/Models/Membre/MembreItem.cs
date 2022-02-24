@@ -9,6 +9,9 @@ namespace HoliDayRental.Models.Membre
         public int idMembre { get; set; }
         public string Nom { get; set; }
         public string Prenom { get; set; }
+        
+        
+        public Payss.Pays Pays { get; set; }
        
     }
 }

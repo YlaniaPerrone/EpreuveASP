@@ -32,13 +32,9 @@ namespace HoliDayRental.BLL.Service
 
         public IEnumerable<Membre> Get()
         {
-            return _membreRepository.Get().Select(d =>
-            {
-                Membre result = d.ToBLL();
-                // result.Pays = _PaysRepository.Get(result.Pays_ID).ToBLL();
-                return result;
-            });throw new NotImplementedException();
+            return _membreRepository.Get().Select(d => d.ToBLL());
         }
+
 
         public int Insert(Membre entity)
         {

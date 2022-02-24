@@ -82,16 +82,16 @@ namespace HoliDayRental.BLL.Handlers
         public static B.Membre ToBLL(this D.Membre entity)
         {
             if (entity == null) return null;
-            return new B.Membre(
-                entity.idMembre,
-                entity.Nom,
-                entity.Prenom,
-                entity.Email,
-                entity.Pays,
-                entity.Telephone,
-                entity.Login,
-                entity.Password
-            );
+            return new B.Membre
+            {
+                idMembre = entity.idMembre,
+                Nom = entity.Nom,
+                Prenom = entity.Prenom,
+                Email = entity.Email,
+                Telephone = entity.Telephone,
+                Login = entity.Login,
+                Password = entity.Password,
+            };
         }
 
         public static D.Membre ToDALL(this B.Membre entity)
@@ -106,7 +106,7 @@ namespace HoliDayRental.BLL.Handlers
                 Telephone = entity.Telephone,
                 Login = entity.Login,
                 Password = entity.Password,
-                Pays = entity.pays.idPays
+                // Pays = entity.pays.idPays
             };
         }
 

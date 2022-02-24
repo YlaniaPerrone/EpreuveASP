@@ -28,7 +28,7 @@ namespace HoliDayRental.Controllers
         public ActionResult Index()
         {
             IEnumerable<BienEchangeItem> model = _bienService.Get().Select(b => b.ToListItem());
-            model = model.Select(m => { m.Pays = _paysService.Get((int)m.idPays).ToListPays(); return m; });
+            // model = model.Select(m => { m.Pays = _paysService.Get((int)m.idPays).ToListPays(); return m; });
             return View(model);
         }
             
@@ -77,7 +77,7 @@ namespace HoliDayRental.Controllers
                 collection.DisabledDate,
                 collection.Latitude,
                 collection.Longitude,
-                 collection.idMembre,
+                collection.idMembre,
                 DateTime.Now
                ) ;
                 {

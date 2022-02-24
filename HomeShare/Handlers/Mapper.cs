@@ -33,6 +33,7 @@ namespace HoliDayRental.Handlers
                 idMembre =  entity.idMembre,
             };
         }
+        
 
         public static BienDetails ToDetails(this HoliDayRental.BLL.Entity.BienEchange entity)
         {
@@ -97,6 +98,22 @@ namespace HoliDayRental.Handlers
                // Login = entity.Login,
                // Password = entity.Password
                
+            };
+        }
+        public static MembreEdit TEditMembre(this HoliDayRental.BLL.Entity.Membre entity)
+        {
+            if (entity == null) return null;
+            return new MembreEdit
+            {
+                idMembre = entity.idMembre,
+                Nom = entity.Nom,
+                Prenom = entity.Prenom,
+                Email = entity.Email,
+                Telephone = entity.Telephone,
+                Pays = entity.idPays,
+                Login = entity.Login,
+                Password = entity.Password
+
             };
         }
 

@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using HoliDayRental.Common.Repository;
+using HoliDayRental.Handlers;
 using HoliDayRental.Models.Membre;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -9,16 +12,21 @@ namespace HoliDayRental.Controllers
     public class MembreController : Controller
     {
         private readonly IMembreRepository<HoliDayRental.BLL.Entity.Membre> _membreService;
+        // private readonly IPaysRepository<HoliDayRental.BLL.Entity.Pays> _paysService;
 
-        public MembreController(IMembreRepository<HoliDayRental.BLL.Entity.Membre> membreService)
+
+        public MembreController(IMembreRepository<HoliDayRental.BLL.Entity.Membre> membreService) //, IPaysRepository<HoliDayRental.BLL.Entity.Pays> paysService
         {
             _membreService = membreService;
+            //_paysService = paysService;
         }
 
         // GET: MembreController
         public ActionResult Index()
         {
-            return View();
+            IEnumerable<MembreItem> model = _membreService.Get().Select(b => b.ToListMembre());
+            model = model.Select(m => { m.idPays = _membreService.Get((int)m.idPays).ToListPays(); return m; });
+            return View(model);
         }
 
         // GET: MembreController/Details/5
@@ -31,7 +39,7 @@ namespace HoliDayRental.Controllers
         public ActionResult Create()
         {
             MembreCreate membre = new MembreCreate();
-
+           // membre.Pays = _paysService.Get().Select(b => b.ToListPays());
             return View(membre);
         }
 

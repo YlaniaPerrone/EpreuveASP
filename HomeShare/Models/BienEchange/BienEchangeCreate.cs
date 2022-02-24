@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using HoliDayRental.Models.Membre;
 
 namespace HoliDayRental.Models.BienEchange
 {
@@ -69,14 +68,12 @@ namespace HoliDayRental.Models.BienEchange
         [Required]
         [DisplayName("Longitude")]
         public string Longitude { get; set; }
-        [Required]
-        [DisplayName("idMembre")]
 
         [ScaffoldColumn(false)]
         public int idMembre { get; set; }
 
         [ScaffoldColumn(false)]
-        public IEnumerable<MembreItem> listMembre { get; set; }
+        public IEnumerable<Membre.MembreItem> listMembre { get; set; }
 
         [ScaffoldColumn(false)]
         [DataType(DataType.Date)]
