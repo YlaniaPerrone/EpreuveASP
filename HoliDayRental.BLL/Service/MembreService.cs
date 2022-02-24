@@ -11,13 +11,13 @@ namespace HoliDayRental.BLL.Service
     public class MembreService : IMembreRepository<HoliDayRental.BLL.Entity.Membre>
     {
         private readonly IMembreRepository<DAL.Entity.Membre> _membreRepository;
-        // private readonly IPaysRepository<DAL.Entity.Membre> _paysRepository;
+        //private readonly IPaysRepository<DAL.Entity.Membre> _paysRepository;
 
-        public MembreService( IMembreRepository<DAL.Entity.Membre> repositoryMembre) //IBienEchangeRepository<DAL.Entity.BienEchange> repository, IPaysRepository<DAL.Entity.Pays> repositoryPays)
+        public MembreService( IMembreRepository<DAL.Entity.Membre> repositoryMembre) //IBienEchangeRepository<DAL.Entity.BienEchange> repository , IPaysRepository<DAL.Entity.Pays> paysRepository)
         {
             _membreRepository = repositoryMembre;
             // _bienEchangeRepository = repository;
-            //_paysRepository = repositoryPays;
+            //_paysRepository = paysRepository;
         }
         public void Delete(int id)
         {
@@ -32,7 +32,12 @@ namespace HoliDayRental.BLL.Service
 
         public IEnumerable<Membre> Get()
         {
-            return _membreRepository.Get().Select(d => d.ToBLL());
+            return _membreRepository.Get().Select(b => {
+                Membre result = b.ToBLL();
+                //result.Membre = _membreRepository.Get(result.idMembre).ToBLL();
+                //result.idPays = _paysRepository.Get(result.idPays).ToBLL();
+                return result;
+            });
         }
 
 

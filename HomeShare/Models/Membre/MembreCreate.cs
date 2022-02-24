@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace HoliDayRental.Models.Membre
@@ -17,9 +18,16 @@ namespace HoliDayRental.Models.Membre
         [Required]
         [EmailAddress(ErrorMessage = "L'adresse n'est au bon format.")]
         [DataType(DataType.EmailAddress)]
+
         [DisplayName("Email")]
         public string Email { get; set; }
-        public int Pays { get; set; }
+
+        [ScaffoldColumn(false)]
+        public int idPays { get; set; }
+
+        [ScaffoldColumn(false)]
+        public IEnumerable<Payss.Pays> PaysList { get; set; }
+
         [Required]
         [DataType(DataType.PhoneNumber)]
         [DisplayName("Telephone")]

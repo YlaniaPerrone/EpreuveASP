@@ -92,18 +92,35 @@ namespace HoliDayRental.Handlers
                idMembre = entity.idMembre,
                Nom = entity.Nom,
                Prenom = entity.Prenom,
-               // Email = entity.Email,
-               // Telephone = entity.Telephone,
-               //Pays = entity.Pays,
-               // Login = entity.Login,
-               // Password = entity.Password
-               
+                // Email = entity.Email,
+                // Telephone = entity.Telephone,
+                idPays = entity.idPays
+                // Login = entity.Login,
+                // Password = entity.Password
+
             };
         }
         public static MembreEdit ToEditMembre(this HoliDayRental.BLL.Entity.Membre entity)
         {
             if (entity == null) return null;
             return new MembreEdit
+            {
+                idMembre = entity.idMembre,
+                Nom = entity.Nom,
+                Prenom = entity.Prenom,
+                Email = entity.Email,
+                Telephone = entity.Telephone,
+                Pays = entity.idPays,
+                Login = entity.Login,
+                Password = entity.Password
+
+            };
+        }
+
+        public static MembreDetails ToDtailsMembre(this HoliDayRental.BLL.Entity.Membre entity)
+        {
+            if (entity == null) return null;
+            return new MembreDetails
             {
                 idMembre = entity.idMembre,
                 Nom = entity.Nom,
