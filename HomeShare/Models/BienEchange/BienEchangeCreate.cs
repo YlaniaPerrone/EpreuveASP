@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using HoliDayRental.Models.Membre;
 
 namespace HoliDayRental.Models.BienEchange
 {
@@ -73,9 +74,9 @@ namespace HoliDayRental.Models.BienEchange
 
         [ScaffoldColumn(false)]
         public int idMembre { get; set; }
-        
-        // [ScaffoldColumn(false)]
-        // public IEnumerable<Models.Membre> listMembre { get; set; }
+
+        [ScaffoldColumn(false)]
+        public IEnumerable<MembreItem> listMembre { get; set; }
 
         [ScaffoldColumn(false)]
         [DataType(DataType.Date)]

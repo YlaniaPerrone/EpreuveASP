@@ -91,11 +91,11 @@ namespace HoliDayRental.Handlers
                idMembre = entity.idMembre,
                Nom = entity.Nom,
                Prenom = entity.Prenom,
-               Email = entity.Email,
-               Telephone = entity.Telephone,
+               // Email = entity.Email,
+               // Telephone = entity.Telephone,
                //Pays = entity.Pays,
-               Login = entity.Login,
-               Password = entity.Password
+               // Login = entity.Login,
+               // Password = entity.Password
                
             };
         }

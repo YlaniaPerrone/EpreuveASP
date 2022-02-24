@@ -2,35 +2,53 @@
 using HoliDayRental.Common.Repository;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using HoliDayRental.BLL.Handlers;
 
 namespace HoliDayRental.BLL.Service
 {
     public class MembreService : IMembreRepository<HoliDayRental.BLL.Entity.Membre>
     {
+        private readonly IMembreRepository<DAL.Entity.Membre> _membreRepository;
+        // private readonly IPaysRepository<DAL.Entity.Membre> _paysRepository;
+
+        public MembreService( IMembreRepository<DAL.Entity.Membre> repositoryMembre) //IBienEchangeRepository<DAL.Entity.BienEchange> repository, IPaysRepository<DAL.Entity.Pays> repositoryPays)
+        {
+            _membreRepository = repositoryMembre;
+            // _bienEchangeRepository = repository;
+            //_paysRepository = repositoryPays;
+        }
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _membreRepository.Delete(id);
+            
         }
 
         public Membre Get(int id)
         {
-            throw new NotImplementedException();
+            return _membreRepository.Get(id).ToBLL();
         }
 
         public IEnumerable<Membre> Get()
         {
-            throw new NotImplementedException();
+            return _membreRepository.Get().Select(d =>
+            {
+                Membre result = d.ToBLL();
+                // result.Pays = _PaysRepository.Get(result.Pays_ID).ToBLL();
+                return result;
+            });throw new NotImplementedException();
         }
 
         public int Insert(Membre entity)
         {
-            throw new NotImplementedException();
+            return _membreRepository.Insert(entity.ToDALL());
+
         }
 
         public void Update(int id, Membre entity)
         {
-            throw new NotImplementedException();
+            _membreRepository.Update(id, entity.ToDALL());
         }
     }
 }

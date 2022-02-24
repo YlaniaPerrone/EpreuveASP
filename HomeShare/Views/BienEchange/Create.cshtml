@@ -1,4 +1,5 @@
 ﻿@using HoliDayRental.Models.Payss
+@using HoliDayRental.Models.Membre
 @model HoliDayRental.Models.BienEchange.BienEchangeCreate
 
 @{
@@ -92,10 +93,18 @@
                 <input asp-for="Longitude" class="form-control"/>
                 <span asp-validation-for="Longitude" class="text-danger"></span>
             </div>
+            @* <div class="form-group"> *@
+            @*     <label asp-for="idMembre" class="control-label"></label> *@
+            @*     <input asp-for="idMembre" class="form-control"/> *@
+            @*     <span asp-validation-for="idMembre" class="text-danger"></span> *@
+            @* </div> *@
             <div class="form-group">
-                <label asp-for="idMembre" class="control-label"></label>
-                <input asp-for="idMembre" class="form-control"/>
-                <span asp-validation-for="idMembre" class="text-danger"></span>
+                <select name="idMembre">
+                    @foreach (MembreItem item in Model.listMembre)
+                    {
+                        <option value="@item.idMembre">@item.Nom @item.Prenom</option>
+                    }
+                </select>
             </div>
 
             <div class="form-group">

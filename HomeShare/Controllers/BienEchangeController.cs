@@ -14,16 +14,16 @@ namespace HoliDayRental.Controllers
     {
         private readonly IBienEchangeRepository<HoliDayRental.BLL.Entity.BienEchange> _bienService;
         private readonly IPaysRepository<HoliDayRental.BLL.Entity.Pays> _paysService;
-        // private readonly IMembreRepository<HoliDayRental.BLL.Entity.Membre> _membreService;
+        private readonly IMembreRepository<HoliDayRental.BLL.Entity.Membre> _membreService;
         
 
 
         // GET: BienEchange
-        public BienEchangeController(IBienEchangeRepository<HoliDayRental.BLL.Entity.BienEchange> bienEchangeService, IPaysRepository<HoliDayRental.BLL.Entity.Pays> paysService) //, IMembreRepository<HoliDayRental.BLL.Entity.Membre> membreService
+        public BienEchangeController(IBienEchangeRepository<HoliDayRental.BLL.Entity.BienEchange> bienEchangeService, IPaysRepository<HoliDayRental.BLL.Entity.Pays> paysService, IMembreRepository<HoliDayRental.BLL.Entity.Membre> membreService) 
         { 
             _bienService = bienEchangeService;
             _paysService = paysService;
-            // _membreService = membreService;
+            _membreService = membreService;
         }
         public ActionResult Index()
         {
@@ -45,7 +45,7 @@ namespace HoliDayRental.Controllers
         {
             BienEchangeCreate bien = new BienEchangeCreate();
             bien.PaysList = _paysService.Get().Select(b => b.ToListPays());
-            // bien. = _paysService.Get().Select(b => b.ToListPays());
+            bien.listMembre = _membreService.Get().Select(b => b.ToListMembre());
             bien.DateCreation = DateTime.Now;
             bien.isEnabled = true;
             return View(bien);
@@ -73,13 +73,13 @@ namespace HoliDayRental.Controllers
                 collection.CodePostal,
                 collection.Photo,
                 collection.AssuranceObligatoire,
-                collection.isEnabled = true,
+                true,
                 collection.DisabledDate,
                 collection.Latitude,
                 collection.Longitude,
-                collection.idMembre,
+                 collection.idMembre,
                 DateTime.Now
-               );
+               ) ;
                 {
                 };
                 this._bienService.Insert(result);
@@ -89,6 +89,7 @@ namespace HoliDayRental.Controllers
             {
                 ViewBag.Error = e.Message;
                 collection.PaysList = _paysService.Get().Select(b => b.ToListPays());
+                collection.listMembre = _membreService.Get().Select(b => b.ToListMembre());
                 collection.DateCreation = DateTime.Now;
                 return View(collection);
             }

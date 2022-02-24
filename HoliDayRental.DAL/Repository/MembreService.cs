@@ -51,7 +51,7 @@ namespace HoliDayRental.DAL.Repository
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "SELECT SELECT [idMembre],[Nom],[Prenom],[Email],[Pays],[Telephone],[Login],[Password] " +
+                    command.CommandText = "SELECT [idMembre],[Nom],[Prenom],[Email],[Pays],[Telephone],[Login],[Password] " +
                         " FROM [Membre]";
                     //Parameters...
                     connection.Open();
@@ -68,9 +68,9 @@ namespace HoliDayRental.DAL.Repository
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "INSERT INTO [Membre]([idMembre],[Nom],[Prenom],[Email],[Pays],[Telephone],[Login],[Password]) OUTPUT [inserted].[Id] " +
-                        " VALUES (@idMembre @Nom, @Prenom, @Email, @Pays, @Telephone, @Login, @Password)";
-                    SqlParameter p_id = new SqlParameter { ParameterName = "idMembre", Value = entity.idMembre };
+                    command.CommandText = "INSERT INTO [Membre]([Nom],[Prenom],[Email],[Pays],[Telephone],[Login],[Password]) OUTPUT [inserted].[Id] " +
+                        " VALUES ( @Nom, @Prenom, @Email, @Pays, @Telephone, @Login, @Password)";
+                    // SqlParameter p_id = new SqlParameter { ParameterName = "idMembre", Value = entity.idMembre };
                     SqlParameter p_nom = new SqlParameter { ParameterName = "Nom", Value = entity.Nom };
                     SqlParameter p_prenome = new SqlParameter { ParameterName = "Prenom", Value = entity.Prenom };
                     SqlParameter p_email = new SqlParameter { ParameterName = "Email", Value = entity.Email };
@@ -79,7 +79,7 @@ namespace HoliDayRental.DAL.Repository
                     SqlParameter p_login = new SqlParameter { ParameterName = "Login", Value = entity.Login };
                     SqlParameter p_password = new SqlParameter { ParameterName = "Password", Value = entity.Password };
 
-                    command.Parameters.Add(p_id);
+                    // command.Parameters.Add(p_id);
                     command.Parameters.Add(p_nom);
                     command.Parameters.Add(p_prenome);
                     command.Parameters.Add(p_email);
@@ -100,8 +100,8 @@ namespace HoliDayRental.DAL.Repository
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "UPDATE [Membre] SET [idMembre] = @idMembre, [Nom] = @Nom,[Prenom] = @Prenom,[Email] = @Email, [Pays] = @Pays, [Telephone] = @Telephone, [Login] = @Login, [Password] = @Password WHERE [Id] = @id";
-                    SqlParameter p_id = new SqlParameter { ParameterName = "idMembre", Value = entity.idMembre };
+                    command.CommandText = "UPDATE [Membre] SET  [Nom] = @Nom,[Prenom] = @Prenom,[Email] = @Email, [Pays] = @Pays, [Telephone] = @Telephone, [Login] = @Login, [Password] = @Password WHERE [Id] = @id";
+                    // SqlParameter p_id = new SqlParameter { ParameterName = "idMembre", Value = entity.idMembre };
                     SqlParameter p_nom = new SqlParameter { ParameterName = "Nom", Value = entity.Nom };
                     SqlParameter p_prenome = new SqlParameter { ParameterName = "Prenom", Value = entity.Prenom };
                     SqlParameter p_email = new SqlParameter { ParameterName = "Email", Value = entity.Email };
@@ -110,7 +110,7 @@ namespace HoliDayRental.DAL.Repository
                     SqlParameter p_login = new SqlParameter { ParameterName = "Login", Value = entity.Login };
                     SqlParameter p_password = new SqlParameter { ParameterName = "Password", Value = entity.Password };
 
-                    command.Parameters.Add(p_id);
+                    // command.Parameters.Add(p_id);
                     command.Parameters.Add(p_nom);
                     command.Parameters.Add(p_prenome);
                     command.Parameters.Add(p_email);
