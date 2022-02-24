@@ -13,7 +13,7 @@ namespace HoliDayRental.DAL.Entity
 
         public int NombrePerson { get; set; }
         public int Pays { get; set; }
-        public IEnumerable<Pays> PaysList { get; set; }
+        
         public string Ville { get; set; }
         public string Rue { get; set; }
 

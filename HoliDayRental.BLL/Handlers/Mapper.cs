@@ -63,7 +63,7 @@ namespace HoliDayRental.BLL.Handlers
                 DescCourte = entity.DescCourte,
                 DescLong = entity.DescLong,
                 NombrePerson = entity.NombrePerson,
-                Pays = entity.Pays.idPays,
+                Pays = entity.idPays,
                 Ville = entity.Ville,
                 Rue = entity.Rue,
                 Numero = entity.Numero,
@@ -75,7 +75,7 @@ namespace HoliDayRental.BLL.Handlers
                 DateCreation = entity.DateCreation,
                 Latitude = entity.Latitude,
                 Longitude = entity.Longitude,
-                idMembre = entity.Membre.idMembre
+                idMembre = entity.idMembre
             };
         }
 

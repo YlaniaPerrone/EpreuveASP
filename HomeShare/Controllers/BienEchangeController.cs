@@ -39,7 +39,6 @@ namespace HoliDayRental.Controllers
         // GET: BienEchange/Create
         public ActionResult Create()
         {
-            //IEnumerable<ITLang> language = _langService.Get();
             BienEchangeCreate bien = new BienEchangeCreate();
             bien.PaysList = _paysService.Get().Select(b => b.ToListPays());
             bien.DateCreation = DateTime.Now;
@@ -54,7 +53,7 @@ namespace HoliDayRental.Controllers
         {
             try
             {
-                if (!ModelState.IsValid) throw new Exception();
+                if (!ModelState.IsValid) throw new Exception("ops a error !!");
                 HoliDayRental.BLL.Entity.BienEchange result = new BLL.Entity.BienEchange(
                 0,
                 collection.titre,
@@ -74,10 +73,7 @@ namespace HoliDayRental.Controllers
                 collection.Longitude,
                 collection.idMembre,
                 collection.DateCreation
-
-              
-                )
-                { };
+               ) { };
                 this._bienService.Insert(result);
                 return RedirectToAction(nameof(Index));
             }
