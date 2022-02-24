@@ -65,7 +65,7 @@ namespace HoliDayRental.Controllers
                     Login = collection.Login,
                     Password = collection.Password
                 };
-                //recupero l'id perché in futuro, se LOGGATO, automaticamente inserisco un bene e ho l'ID
+
                 this._membreService.Insert(result);
                 return RedirectToAction(nameof(Index));
             }
@@ -118,24 +118,24 @@ namespace HoliDayRental.Controllers
         }
 
         // GET: MembreController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: MembreController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        // public ActionResult Delete(int id)
+        // {
+        //     return View();
+        // }
+        //
+        // // POST: MembreController/Delete/5
+        // [HttpPost]
+        // [ValidateAntiForgeryToken]
+        // public ActionResult Delete(int id, IFormCollection collection)
+        // {
+        //     try
+        //     {
+        //         return RedirectToAction(nameof(Index));
+        //     }
+        //     catch
+        //     {
+        //         return View();
+        //     }
+        // }
     }
 }
