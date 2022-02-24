@@ -18,16 +18,17 @@ namespace HoliDayRental.Models.BienEchange
         [Required]
         [DisplayName("DescCourte")]
         public string DescCourte { get; set; }
+        
         [Required]
         [DisplayName("DescLong")]
         public string DescLong { get; set; }
+        
         [Required]
         [DisplayName("NombrePerson")]
         public int NombrePerson { get; set; }
         
         [ScaffoldColumn(false)]
-        [Required]
-        public int idPays { get; set; }
+      public int idPays { get; set; }
         
         [DisplayName("Pays")]
         public IEnumerable<Payss.Pays> PaysList { get; set; }
@@ -39,14 +40,15 @@ namespace HoliDayRental.Models.BienEchange
         [Required]
         [DisplayName("Rue")]
         public string Rue { get; set; }
+        
         [Required]
         [DisplayName("Numero")]
-
         public string Numero { get; set; }
+        
         [Required]
         [DisplayName("CodePostal")]
-
         public string CodePostal { get; set; }
+        
         [Required]
         [DisplayName("Photo")]
         public string Photo { get; set; }

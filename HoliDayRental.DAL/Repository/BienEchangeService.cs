@@ -63,22 +63,22 @@ namespace HoliDayRental.DAL.Repository
             }
         }
 
-
-        //public IEnumerable<BienEchange> GetBienDyspo(bool isEnabled)
-        //{
-        //    using (SqlConnection connection = new SqlConnection(_connString))
-        //    {
-        //        using (SqlCommand command = connection.CreateCommand())
-        //        {
-        //            command.CommandText = "SELECT [idBien], [titre], [DescCourte], [DescLong], [NombrePerson], [Pays], [Ville], [Rue], [Numero], [CodePostal], [Photo], [AssuranceObligatoire], [isEnabled], [DisabledDate], [Latitude], [Longitude], [idMembre], [DateCreation] FROM [BienEchange] WHERE [isEnabled] = True";
-        //            //Parameters...
-        //            connection.Open();
-        //            //Choose Execution method
-        //            SqlDataReader reader = command.ExecuteReader();
-        //            while (reader.Read()) yield return Mapper.ToBienEchange(reader);
-        //        }
-        //    }
-        //}
+        
+        public IEnumerable<BienEchange> Ge(bool isEnabled)
+        {
+            using (SqlConnection connection = new SqlConnection(_connString))
+            {
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "SELECT [idBien], [titre], [DescCourte], [DescLong], [NombrePerson], [Pays], [Ville], [Rue], [Numero], [CodePostal], [Photo], [AssuranceObligatoire], [isEnabled], [DisabledDate], [Latitude], [Longitude], [idMembre], [DateCreation] FROM [BienEchange] WHERE [isEnabled] = True";
+                    //Parameters...
+                    connection.Open();
+                    //Choose Execution method
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read()) yield return Mapper.ToBienEchange(reader);
+                }
+            }
+        }
 
         public int Insert(BienEchange entity)
         {
@@ -86,10 +86,10 @@ namespace HoliDayRental.DAL.Repository
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "INSERT INTO [BienEchange]([idBien], [titre], [DescCourte], [DescLong], [NombrePerson], [Pays], [Ville], [Rue], [Numero], [CodePostal], [Photo], [AssuranceObligatoire], [isEnabled], [DisabledDate], [Latitude], [Longitude], [idMembre], [DateCreation]) " +
-                        " OUTPUT [inserted].[idBien] VALUES (@idBien, @titre, @DescCourte, @DescLong, @NombrePerson, @Pays, @Ville, @Rue, @Numero, @CodePostal, @Photo, @AssuranceObligatoire, @isEnabled, @DisabledDate, @Latitude, @Longitude, @idMembre, @DateCreation)";
-                    SqlParameter p_id = new SqlParameter("idBien", entity.idBien);
-                    command.Parameters.Add(p_id);
+                    command.CommandText = "INSERT INTO [BienEchange]([titre], [DescCourte], [DescLong], [NombrePerson], [Pays], [Ville], [Rue], [Numero], [CodePostal], [Photo], [AssuranceObligatoire], [isEnabled], [DisabledDate], [Latitude], [Longitude], [idMembre], [DateCreation]) " +
+                        " OUTPUT [inserted].[idBien] VALUES ( @titre, @DescCourte, @DescLong, @NombrePerson, @Pays, @Ville, @Rue, @Numero, @CodePostal, @Photo, @AssuranceObligatoire, @isEnabled, @DisabledDate, @Latitude, @Longitude, @idMembre, @DateCreation)";
+                    // SqlParameter p_id = new SqlParameter("idBien", entity.idBien);
+                    // command.Parameters.Add(p_id);
                     SqlParameter p_titre = new SqlParameter("titre", entity.titre);
                     command.Parameters.Add(p_titre);
                     SqlParameter p_descCourte = new SqlParameter("DescCourte", entity.DescCourte);
@@ -112,7 +112,7 @@ namespace HoliDayRental.DAL.Repository
                     command.Parameters.Add(p_photo);
                     SqlParameter p_assuranceObligatoire = new SqlParameter("AssuranceObligatoire", entity.AssuranceObligatoire);
                     command.Parameters.Add(p_assuranceObligatoire);
-                    SqlParameter p_isEnabled = new SqlParameter("isEnabled", entity.CodePostal);
+                    SqlParameter p_isEnabled = new SqlParameter("isEnabled", entity.isEnabled);
                     command.Parameters.Add(p_isEnabled);
                     SqlParameter p_disabledDate = new SqlParameter { ParameterName = "DisabledDate", Value = (object)entity.DisabledDate ?? DBNull.Value };
                     command.Parameters.Add(p_disabledDate);
@@ -178,6 +178,22 @@ namespace HoliDayRental.DAL.Repository
 
                     connection.Open();
                     command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public IEnumerable<BienEchange> Get5LastPropretyAdded()
+        {
+            using (SqlConnection connection = new SqlConnection(_connString))
+            {
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "SELECT [idBien], [titre], [DescCourte], [DescLong], [NombrePerson], [Pays], [Ville], [Rue], [Numero], [CodePostal], [Photo], [AssuranceObligatoire], [isEnabled], [DisabledDate], [Latitude], [Longitude], [idMembre], [DateCreation]  FROM [dbo].[Vue_BiensParPays]";
+
+                    connection.Open();
+
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read()) yield return Mapper.ToBienEchange(reader);
                 }
             }
         }

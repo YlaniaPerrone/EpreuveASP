@@ -70,10 +70,12 @@ namespace HoliDayRental.Controllers
                 collection.AssuranceObligatoire,
                 collection.isEnabled = true,
                 collection.DisabledDate,
-                collection.DateCreation = DateTime.Now,
                 collection.Latitude,
                 collection.Longitude,
-                collection.idMembre
+                collection.idMembre,
+                collection.DateCreation
+
+              
                 )
                 { };
                 this._bienService.Insert(result);
@@ -82,6 +84,7 @@ namespace HoliDayRental.Controllers
             catch (Exception e)
             {
                 ViewBag.Error = e.Message;
+                collection.PaysList = _paysService.Get().Select(b => b.ToListPays());
                 return View(collection);
             }
         }
@@ -133,24 +136,24 @@ namespace HoliDayRental.Controllers
         }
 
         // GET: BienEchange/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: BienEchange/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        // public ActionResult Delete(int id)
+        // {
+        //     return View();
+        // }
+        //
+        // // POST: BienEchange/Delete/5
+        // [HttpPost]
+        // [ValidateAntiForgeryToken]
+        // public ActionResult Delete(int id, IFormCollection collection)
+        // {
+        //     try
+        //     {
+        //         return RedirectToAction(nameof(Index));
+        //     }
+        //     catch
+        //     {
+        //         return View();
+        //     }
+        // }
     }
 }

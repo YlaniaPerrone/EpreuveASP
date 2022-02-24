@@ -37,16 +37,13 @@ namespace HoliDayRental.DAL.Repository
                 using (SqlCommand command = connection.CreateCommand())
                 {
                     command.CommandText = "SELECT [idPays], [Libelle] FROM [Pays]";
-                    //Parameters...
-                    //SqlParameter p_id = new SqlParameter("id", id);
-                    //command.Parameters.Add(p_id);
                     connection.Open();
-                    //Choose Execution method
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read()) yield return Mapper.ToGetPays(reader);
                 }
             
             }
         }
+        
     }
 }

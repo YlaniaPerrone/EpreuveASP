@@ -14,7 +14,7 @@ namespace HoliDayRental.BLL.Handlers
             return new B.Options(
                 entity.idOption,
                 entity.Libelle
-                );
+            );
         }
 
 
@@ -32,24 +32,24 @@ namespace HoliDayRental.BLL.Handlers
         {
             if (entity == null) return null;
             return new B.BienEchange(
-             entity.idBien,
-             entity.titre,
-             entity.DescCourte,
-             entity.DescLong,
-            entity.NombrePerson,
-            entity.Pays,
-            entity.Ville,
-            entity.Rue,
-            entity.Numero,
-            entity.CodePostal,
-            entity.Photo,
-            entity.AssuranceObligatoire,
-            entity.isEnabled,
-            entity.DisabledDate,
-            entity.DateCreation,
-            entity.Latitude,
-            entity.Longitude,
-            entity.idMembre
+                entity.idBien,
+                entity.titre,
+                entity.DescCourte,
+                entity.DescLong,
+                entity.NombrePerson,
+                entity.Pays,
+                entity.Ville,
+                entity.Rue,
+                entity.Numero,
+                entity.CodePostal,
+                entity.Photo,
+                entity.AssuranceObligatoire,
+                entity.isEnabled,
+                entity.DisabledDate,
+                entity.Latitude,
+                entity.Longitude,
+                entity.idMembre,
+                entity.DateCreation
             );
         }
 
@@ -84,14 +84,14 @@ namespace HoliDayRental.BLL.Handlers
             if (entity == null) return null;
             return new B.Membre(
                 entity.idMembre,
-                entity.Nom ,
+                entity.Nom,
                 entity.Prenom,
                 entity.Email,
                 entity.Pays,
                 entity.Telephone,
                 entity.Login,
                 entity.Password
-                );
+            );
         }
 
         public static D.Membre ToDALL(this B.Membre entity)
@@ -107,7 +107,6 @@ namespace HoliDayRental.BLL.Handlers
                 Login = entity.Login,
                 Password = entity.Password,
                 Pays = entity.pays.idPays
-                               
             };
         }
 
@@ -128,13 +127,7 @@ namespace HoliDayRental.BLL.Handlers
             {
                 idPays = entity.idPays,
                 Libelle = entity.Libelle
-           
             };
         }
-
-
-
-
-
     }
 }

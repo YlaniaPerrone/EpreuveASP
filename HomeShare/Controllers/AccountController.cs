@@ -15,10 +15,10 @@ namespace HoliDayRental.Controllers
             _logger = logger;
             _httpContext = httpContext;
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
+        // public IActionResult Index()
+        // {
+        //     return View();
+        // }
 
         public IActionResult Register()
         {

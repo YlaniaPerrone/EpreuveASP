@@ -11,8 +11,9 @@ namespace HoliDayRental.BLL.Entity
         public string DescCourte { get; set; }
         public string DescLong { get; set; }
         public int NombrePerson { get; set; }
-        
         public int idPays { get; set; }
+        public Pays Pays { get; set; }
+
         public string Ville { get; set; }
         public string Rue { get; set; }
         public string Numero { get; set; }
@@ -24,13 +25,13 @@ namespace HoliDayRental.BLL.Entity
         public string Latitude { get; set; }
         public string Longitude { get; set; }
         public int idMembre { get; set; }
-        public DateTime DateCreation { get; set; }
-
-        public Pays Pays { get; set; }
         public Membre Membre { get; set; }
 
+        public DateTime DateCreation { get; set; }
 
-        public BienEchange(int id, string title, string descCourte, string descLong, int nbrePerson, Pays pays, string ville, string rue, string numero, string codePostale, string photo, bool assurance, bool enabed, DateTime? dateDisable, DateTime date,   string latitude, string longitude,  Membre membre)
+
+
+        public BienEchange(int id, string title, string descCourte, string descLong, int nbrePerson, Pays pays, string ville, string rue, string numero, string codePostale, string photo, bool assurance, bool enabed, DateTime? dateDisable, string latitude, string longitude, Membre membre, DateTime date)
         {
            
             idBien = id;
@@ -49,38 +50,39 @@ namespace HoliDayRental.BLL.Entity
             AssuranceObligatoire = assurance;
             isEnabled = enabed;
             DisabledDate = dateDisable;
-            DateCreation = date;
             Latitude = latitude;
             Longitude = longitude;
-         
             Membre = membre;
             if (membre == null) throw new ArgumentNullException(nameof(idMembre));
             idMembre = membre.idMembre;
+            DateCreation = date;
+            
+         
+           
         }
 
-        public BienEchange(int id, string title, string descCourte, string descLong, int nbrePerson, int Id_pays, string ville, string rue, string num, string codePostal, string photo, bool assurance, bool enabed, DateTime? dateDisable, DateTime date , string latitude, string longitude, int id_membre)
+        public BienEchange(int id, string title, string descCourte, string descLong, int nbrePerson, int Id_pays, string ville, string rue, string numero, string codePostale, string photo, bool assurance, bool enabed, DateTime? dateDisable, string latitude, string longitude, int id_membre, DateTime date)
         {
-            idBien = id;
+
+           idBien = id;
             titre = title;
             DescCourte = descCourte;
             DescLong = descLong;
             NombrePerson = nbrePerson;
+            idPays = Id_pays;
             Ville = ville;
             Rue = rue;
-            Numero = num;
-            CodePostal = codePostal;
+            Numero = numero;
+            CodePostal = codePostale;
             Photo = photo;
             AssuranceObligatoire = assurance;
             isEnabled = enabed;
             DisabledDate = dateDisable;
-            DateCreation = date;
             Latitude = latitude;
             Longitude = longitude;
-             
-            idPays = Id_pays;
-            idMembre = id_membre;
-           // Membre = null;
-           // Pays = null;
+            idMembre = idMembre;
+            DateCreation = date;
+
         }
 
        

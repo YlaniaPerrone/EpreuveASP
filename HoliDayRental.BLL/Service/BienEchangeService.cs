@@ -42,6 +42,7 @@ namespace HoliDayRental.BLL.Service
             });
         }
 
+        
         public int Insert(BienEchange entity)
         {
             return _bienEchangeRepository.Insert(entity.ToDALL());
@@ -50,6 +51,11 @@ namespace HoliDayRental.BLL.Service
         public void Update(int id, BienEchange entity)
         {
             _bienEchangeRepository.Update(id, entity.ToDALL());
+        }
+
+        public IEnumerable<BienEchange> Get5LastPropretyAdded()
+        {
+            return _bienEchangeRepository.Get().Select(d => d.ToBLL());
         }
     }
 }
