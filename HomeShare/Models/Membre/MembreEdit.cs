@@ -6,9 +6,6 @@ namespace HoliDayRental.Models.Membre
 {
     public class MembreEdit
     {
-        [ScaffoldColumn(false)]
-        [Key]
-        public int idMembre { get; set; }
         [Required]
         [DisplayName("Nom")]
         public string Nom { get; set; }
@@ -22,7 +19,7 @@ namespace HoliDayRental.Models.Membre
         [DisplayName("Adresse électronique : ")]
         public string Email { get; set; }
 
-        [Required]
+        // [Required]
         [DisplayName("PaysList")]
         public IEnumerable<Payss.Pays> PaysList { get; set; }
 
@@ -31,21 +28,17 @@ namespace HoliDayRental.Models.Membre
         public int Pays { get; set; }
 
         [Required(ErrorMessage = "entrez un bon num de tel")]
-        //[MaxLength]
-        [DataType(DataType.Password)]
         [DisplayName("Telephone ")]
-
         public string Telephone { get; set; }
 
         [Required]
-        [RegularExpression(@"^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\S+$).{8,20}$", ErrorMessage = "Uniquement du texte.")]
+        // [RegularExpression(@"^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\S+$).{8,20}$", ErrorMessage = "Uniquement du texte.")]
         [DisplayName("Login")]
-
         public string Login { get; set; }
-
-        [Required(ErrorMessage = "Le mot de passe est obligatoire.")]
+        
+        // [Required(ErrorMessage = "Le mot de passe est obligatoire.")]
         //any kind of letter from any language
-        [RegularExpression(@"\p{L}", ErrorMessage = "Le mot de passe doit au minimum un nombre, une minuscule, une majuscule, un caractère parmis '@#$%^&-+=()', aucun espace blanc, compris entre 8 et 20 caractères.")]
+        // [RegularExpression(@"\p{L}", ErrorMessage = "Le mot de passe doit au minimum un nombre, une minuscule, une majuscule, un caractère parmis '@#$%^&-+=()', aucun espace blanc, compris entre 8 et 20 caractères.")]
         [DataType(DataType.Password)]
         [DisplayName("Password ")]
         public string Password { get; set; }

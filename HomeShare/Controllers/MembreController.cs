@@ -99,22 +99,22 @@ namespace HoliDayRental.Controllers
                 if (result is null) throw new Exception("Pas de résultat avec cet identifiant");
                 if (!(ModelState.IsValid)) throw new Exception();
 
-                result.idMembre = collection.idMembre;
+                // result.idMembre = collection.idMembre;
                 result.Nom = collection.Nom;
                 result.Prenom = collection.Prenom;
                 result.Telephone = collection.Telephone;
-                result.Login = collection.Login;
-                result.Password = collection.Telephone;
+                // result.Login = collection.Login;
+                // result.Password = collection.Password;
                 result.idPays = collection.Pays;
                 
-
+                this._membreService.Update(id,result);
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception e)
             {
                 ViewBag.Errors = e.Message;
-                if (result is null) return RedirectToAction(nameof(Index));
-                return View(result.ToEditMembre());
+                collection.PaysList = _paysService.Get().Select(b => b.ToListPays());
+                return View(collection);
             }
         }
 
