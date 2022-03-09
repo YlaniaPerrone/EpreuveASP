@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace HoliDayRental.Models.Membre
 {
@@ -7,11 +8,21 @@ namespace HoliDayRental.Models.Membre
         [ScaffoldColumn(false)]
         [Key]
         public int idMembre { get; set; }
+        
+        [DisplayName("Nom")]
         public string Nom { get; set; }
+        
+        [DisplayName("Prenom")]
         public string Prenom { get; set; }
-
+        
+        [ScaffoldColumn(false)]
         public int idPays { get; set; }
+        [ScaffoldColumn(false)]
+    
         public Payss.Pays PaysList { get; set; }
+        
+        [DisplayName("Pays")]
+        public string LibellePays { get { return this.PaysList.Libelle; } }
        
     }
 }

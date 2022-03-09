@@ -98,7 +98,7 @@ namespace HoliDayRental.Controllers
         // GET: BienEchange/Edit/5
         public ActionResult Edit(int id)
         {
-            BienEdit model = _bienService.Get(id).ToBienEdit();
+            BienEdit model = this._bienService.Get(id).ToBienEdit();
             model.PaysList = _paysService.Get().Select(b => b.ToListPays());
             return View(model);
         }
