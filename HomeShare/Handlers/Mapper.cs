@@ -1,4 +1,4 @@
-﻿// using HoliDayRental.Models.BienEchange;
+﻿using HoliDayRental.Models.BienEchange;
 using HoliDayRental.Models.Membre;
 using HoliDayRental.Models.Payss;
 
@@ -8,80 +8,80 @@ namespace HoliDayRental.Handlers
     {
 
         //bien
-        // public static BienEchangeItem ToListItem(this HoliDayRental.BLL.Entity.BienEchange entity )
-        // {
-        //     if (entity == null) return null;
-        //     return new BienEchangeItem
-        //     {
-        //         idBien = entity.idBien,
-        //         titre = entity.titre,
-        //         DescCourte = entity.DescCourte,
-        //         DescLong = entity.DescLong,
-        //         NombrePerson = entity.NombrePerson,
-        //         idPays = entity.idPays,
-        //         Ville = entity.Ville,
-        //         Rue = entity.Rue,
-        //         Numero = entity.Numero,
-        //         CodePostal =  entity.CodePostal,
-        //         Photo = entity.Photo,
-        //         AssuranceObligatoire = entity.AssuranceObligatoire,
-        //         isEnabled = entity.isEnabled,
-        //         DisabledDate = entity.DisabledDate,
-        //         DateCreation = entity.DateCreation,
-        //         Latitude = entity.Latitude,
-        //         Longitude = entity.Longitude,
-        //         idMembre =  entity.idMembre,
-        //     };
-        // }
-        //
-        //
-        // public static BienDetails ToDetails(this HoliDayRental.BLL.Entity.BienEchange entity)
-        // {
-        //     if (entity == null) return null;
-        //     return new BienDetails
-        //     {
-        //         idBien = entity.idBien,
-        //         titre = entity.titre,
-        //         DescCourte = entity.DescCourte,
-        //         DescLong = entity.DescLong,
-        //         NombrePerson = entity.NombrePerson,
-        //         Pays = entity.idPays,
-        //         Ville = entity.Ville,
-        //         Rue = entity.Rue,
-        //         Numero = entity.Numero,
-        //         CodePostal = entity.CodePostal,
-        //         Photo = entity.Photo,
-        //         AssuranceObligatoire = entity.AssuranceObligatoire,
-        //         Latitude = entity.Latitude,
-        //         Longitude = entity.Longitude
-        //
-        //     };
-        // }
-        //
-        // public static BienEdit ToBienEdit(this HoliDayRental.BLL.Entity.BienEchange entity)
-        // {
-        //     if (entity == null) return null;
-        //     return new BienEdit
-        //     {
-        //         idBien = entity.idBien,
-        //         titre = entity.titre,
-        //         DescCourte = entity.DescCourte,
-        //         DescLong = entity.DescLong,
-        //         NombrePerson = entity.NombrePerson,
-        //         Pays = entity.idPays,
-        //         Ville = entity.Ville,
-        //         Rue = entity.Rue,
-        //         Numero = entity.Numero,
-        //         CodePostal = entity.CodePostal,
-        //         // Photo = entity.Photo,
-        //         isEnabled = entity.isEnabled,
-        //         DisabledDate = entity.DisabledDate,
-        //         AssuranceObligatoire = entity.AssuranceObligatoire,
-        //         Latitude = entity.Latitude,
-        //         Longitude = entity.Longitude
-        //       
-        //     };
-        // }
+        public static BienEchangeItem ToListItem(this HoliDayRental.BLL.Entity.BienEchange entity )
+        {
+            if (entity == null) return null;
+            return new BienEchangeItem
+            {
+                idBien = entity.idBien,
+                titre = entity.titre,
+                DescCourte = entity.DescCourte,
+                DescLong = entity.DescLong,
+                NombrePerson = entity.NombrePerson,
+                idPays = entity.idPays,
+                Ville = entity.Ville,
+                Rue = entity.Rue,
+                Numero = entity.Numero,
+                CodePostal =  entity.CodePostal,
+                Photo = entity.Photo,
+                AssuranceObligatoire = entity.AssuranceObligatoire,
+                isEnabled = entity.isEnabled,
+                DisabledDate = entity.DisabledDate,
+                DateCreation = entity.DateCreation,
+                Latitude = entity.Latitude,
+                Longitude = entity.Longitude,
+                idMembre =  entity.idMembre,
+            };
+        }
+        
+        
+        public static BienDetails ToDetails(this HoliDayRental.BLL.Entity.BienEchange entity)
+        {
+            if (entity == null) return null;
+            return new BienDetails
+            {
+                idBien = entity.idBien,
+                titre = entity.titre,
+                DescCourte = entity.DescCourte,
+                DescLong = entity.DescLong,
+                NombrePerson = entity.NombrePerson,
+                Pays = entity.idPays,
+                Ville = entity.Ville,
+                Rue = entity.Rue,
+                Numero = entity.Numero,
+                CodePostal = entity.CodePostal,
+                Photo = entity.Photo,
+                AssuranceObligatoire = entity.AssuranceObligatoire,
+                Latitude = entity.Latitude,
+                Longitude = entity.Longitude
+        
+            };
+        }
+        
+        public static BienEdit ToBienEdit(this HoliDayRental.BLL.Entity.BienEchange entity)
+        {
+            if (entity == null) return null;
+            return new BienEdit
+            {
+                idBien = entity.idBien,
+                titre = entity.titre,
+                DescCourte = entity.DescCourte,
+                DescLong = entity.DescLong,
+                NombrePerson = entity.NombrePerson,
+                Pays = entity.idPays,
+                Ville = entity.Ville,
+                Rue = entity.Rue,
+                Numero = entity.Numero,
+                CodePostal = entity.CodePostal,
+                // Photo = entity.Photo,
+                isEnabled = entity.isEnabled,
+                DisabledDate = entity.DisabledDate,
+                AssuranceObligatoire = entity.AssuranceObligatoire,
+                Latitude = entity.Latitude,
+                Longitude = entity.Longitude
+              
+            };
+        }
 
         //Membre
         public static MembreItem ToListMembre(this HoliDayRental.BLL.Entity.Membre entity)

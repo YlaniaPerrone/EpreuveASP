@@ -28,56 +28,56 @@ namespace HoliDayRental.BLL.Handlers
             };
         }
 
-        // public static B.BienEchange ToBLL(this D.BienEchange entity)
-        // {
-        //     if (entity == null) return null;
-        //     return new B.BienEchange(
-        //         entity.idBien,
-        //         entity.titre,
-        //         entity.DescCourte,
-        //         entity.DescLong,
-        //         entity.NombrePerson,
-        //         entity.Pays,
-        //         entity.Ville,
-        //         entity.Rue,
-        //         entity.Numero,
-        //         entity.CodePostal,
-        //         entity.Photo,
-        //         entity.AssuranceObligatoire,
-        //         entity.isEnabled,
-        //         entity.DisabledDate,
-        //         entity.Latitude,
-        //         entity.Longitude,
-        //         entity.idMembre,
-        //         entity.DateCreation
-        //     );
-        // }
-        //
-        // public static D.BienEchange ToDALL(this B.BienEchange entity)
-        // {
-        //     if (entity == null) return null;
-        //     return new D.BienEchange
-        //     {
-        //         idBien = entity.idBien,
-        //         titre = entity.titre,
-        //         DescCourte = entity.DescCourte,
-        //         DescLong = entity.DescLong,
-        //         NombrePerson = entity.NombrePerson,
-        //         Pays = entity.idPays,
-        //         Ville = entity.Ville,
-        //         Rue = entity.Rue,
-        //         Numero = entity.Numero,
-        //         CodePostal = entity.CodePostal,
-        //         Photo = entity.Photo,
-        //         AssuranceObligatoire = entity.AssuranceObligatoire,
-        //         isEnabled = entity.isEnabled,
-        //         DisabledDate = entity.DisabledDate,
-        //         DateCreation = entity.DateCreation,
-        //         Latitude = entity.Latitude,
-        //         Longitude = entity.Longitude,
-        //         idMembre = entity.idMembre
-        //     };
-        // }
+        public static B.BienEchange ToBLL(this D.BienEchange entity)
+        {
+            if (entity == null) return null;
+            return new B.BienEchange(
+                entity.idBien,
+                entity.titre,
+                entity.DescCourte,
+                entity.DescLong,
+                entity.NombrePerson,
+                entity.Pays,
+                entity.Ville,
+                entity.Rue,
+                entity.Numero,
+                entity.CodePostal,
+                entity.Photo,
+                entity.AssuranceObligatoire,
+                entity.isEnabled,
+                entity.DisabledDate,
+                entity.Latitude,
+                entity.Longitude,
+                entity.idMembre,
+                entity.DateCreation
+            );
+        }
+        
+        public static D.BienEchange ToDALL(this B.BienEchange entity)
+        {
+            if (entity == null) return null;
+            return new D.BienEchange
+            {
+                idBien = entity.idBien,
+                titre = entity.titre,
+                DescCourte = entity.DescCourte,
+                DescLong = entity.DescLong,
+                NombrePerson = entity.NombrePerson,
+                Pays = entity.idPays,
+                Ville = entity.Ville,
+                Rue = entity.Rue,
+                Numero = entity.Numero,
+                CodePostal = entity.CodePostal,
+                Photo = entity.Photo,
+                AssuranceObligatoire = entity.AssuranceObligatoire,
+                isEnabled = entity.isEnabled,
+                DisabledDate = entity.DisabledDate,
+                DateCreation = entity.DateCreation,
+                Latitude = entity.Latitude,
+                Longitude = entity.Longitude,
+                idMembre = entity.idMembre
+            };
+        }
 
         public static B.Membre ToBLL(this D.Membre entity)
         {

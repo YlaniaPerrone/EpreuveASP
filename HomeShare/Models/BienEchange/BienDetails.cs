@@ -1,28 +1,28 @@
-﻿// using System.ComponentModel.DataAnnotations;
-//
-// namespace HoliDayRental.Models.BienEchange
-// {
-//     public class BienDetails
-//     {
-//         [ScaffoldColumn(false)]
-//         [Key]
-//         public int idBien { get; set; }
-//         public string titre { get; set; }
-//         public string DescCourte { get; set; }
-//         public string DescLong { get; set; }
-//         public int NombrePerson { get; set; }
-//         public int Pays { get; set; }
-//         public string Ville { get; set; }
-//         public string Rue { get; set; }
-//
-//         public string Numero { get; set; }
-//
-//         public string CodePostal { get; set; }
-//         public string Photo { get; set; }
-//         public bool AssuranceObligatoire { get; set; }
-//       
-//         public string Latitude { get; set; }
-//         public string Longitude { get; set; }
-//         
-//     }
-// }
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace HoliDayRental.Models.BienEchange
+{
+    public class BienDetails
+    {
+        [ScaffoldColumn(false)]
+        [Key]
+        public int idBien { get; set; }
+        public string titre { get; set; }
+        public string DescCourte { get; set; }
+        public string DescLong { get; set; }
+        public int NombrePerson { get; set; }
+        public int Pays { get; set; }
+        public string Ville { get; set; }
+        public string Rue { get; set; }
+
+        public string Numero { get; set; }
+
+        public string CodePostal { get; set; }
+        public string Photo { get; set; }
+        public bool AssuranceObligatoire { get; set; }
+      
+        public string Latitude { get; set; }
+        public string Longitude { get; set; }
+        
+    }
+}

@@ -10,24 +10,22 @@
   <component name="ChangeListManager">
     <list default="true" id="6f4d960e-2c1b-4890-8ef7-2225cdb3e035" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HolidayRental/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HolidayRental/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HoliDayRental.BLL/Entity/BienEchange.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HoliDayRental.BLL/Entity/BienEchange.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HoliDayRental.BLL/Handlers/Mapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HoliDayRental.BLL/Handlers/Mapper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HoliDayRental.BLL/Service/BienEchangeService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HoliDayRental.BLL/Service/BienEchangeService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HoliDayRental.DAL/Repository/MembreService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HoliDayRental.DAL/Repository/MembreService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HoliDayRental.DAL/Handlers/Mapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HoliDayRental.DAL/Handlers/Mapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HoliDayRental.DAL/Repository/BienEchangeService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HoliDayRental.DAL/Repository/BienEchangeService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HomeShare/Controllers/BienEchangeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HomeShare/Controllers/BienEchangeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HomeShare/Controllers/MembreController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HomeShare/Controllers/MembreController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HomeShare/Handlers/Mapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HomeShare/Handlers/Mapper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HomeShare/Models/BienEchange/BienDetails.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HomeShare/Models/BienEchange/BienDetails.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HomeShare/Models/BienEchange/BienEchangeCreate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HomeShare/Models/BienEchange/BienEchangeCreate.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HomeShare/Models/BienEchange/BienEchangeItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HomeShare/Models/BienEchange/BienEchangeItem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HomeShare/Models/BienEchange/BienEdit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HomeShare/Models/BienEchange/BienEdit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HomeShare/Models/Membre/MembreDetails.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HomeShare/Models/Membre/MembreDetails.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HomeShare/Models/Membre/MembreEdit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HomeShare/Models/Membre/MembreEdit.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HomeShare/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HomeShare/Startup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HomeShare/Views/BienEchange/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/HomeShare/Views/BienEchange/Create.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HomeShare/Views/BienEchange/Details.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/HomeShare/Views/BienEchange/Details.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HomeShare/Views/BienEchange/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/HomeShare/Views/BienEchange/Edit.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HomeShare/Views/BienEchange/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/HomeShare/Views/BienEchange/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HomeShare/Views/Membre/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/HomeShare/Views/Membre/Edit.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HomeShare/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/HomeShare/Views/Shared/_Layout.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,6 +39,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f2bc4e43805e4971b70ea75e054122a51bbb88/11A/ControllerActionInvoker.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f2bc4e43805e4971b70ea75e054122a51bbb88/10F/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b3351ddce46b49368e0e12167a335243f9f80/74/SqlDataReader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f2bc4e43805e4971b70ea75e054122a51bbb88/38/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9e655e9fd1cc406fb2837d7f3c3eba138f5788/233/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -50,12 +49,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.48290014" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.032831736" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="XThreadsFramesViewSplitterKey" value="0.68838525" />
+    <property name="XThreadsFramesViewSplitterKey" value="1.0" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -114,7 +113,7 @@
       <workItem from="1646826145238" duration="554000" />
       <workItem from="1646826739492" duration="1052000" />
       <workItem from="1646828079683" duration="12504000" />
-      <workItem from="1646845121517" duration="1114000" />
+      <workItem from="1646845121517" duration="10966000" />
     </task>
     <servers />
   </component>
@@ -131,27 +130,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/HomeShare/Controllers/BienEchangeController.cs</url>
-          <line>57</line>
-          <properties documentPath="D:\interface3\EpreuveASP\Template\Template\HomeShare\HomeShare\Controllers\BienEchangeController.cs" initialLine="57" containingFunctionPresentation="method 'Create'">
-            <startOffsets>
-              <option value="2199" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2200" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/HoliDayRental.DAL/Repository/BienEchangeService.cs</url>
-          <line>136</line>
+          <line>137</line>
           <properties documentPath="D:\interface3\EpreuveASP\Template\Template\HomeShare\HoliDayRental.DAL\Repository\BienEchangeService.cs" initialLine="136" containingFunctionPresentation="method 'Update'">
             <startOffsets>
-              <option value="7692" />
+              <option value="7458" />
             </startOffsets>
             <endOffsets>
-              <option value="7693" />
+              <option value="7459" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="10" />
@@ -169,7 +155,79 @@
           </properties>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/HomeShare/Controllers/BienEchangeController.cs</url>
+          <line>59</line>
+          <properties documentPath="D:\interface3\EpreuveASP\Template\Template\HomeShare\HomeShare\Controllers\BienEchangeController.cs" initialLine="59" containingFunctionPresentation="method 'Create'">
+            <startOffsets>
+              <option value="2227" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2228" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/HoliDayRental.DAL/Handlers/Mapper.cs</url>
+          <line>52</line>
+          <properties documentPath="D:\interface3\EpreuveASP\Template\Template\HomeShare\HoliDayRental.DAL\Handlers\Mapper.cs" initialLine="52" containingFunctionPresentation="method 'ToBienEchange'">
+            <startOffsets>
+              <option value="1752" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3192" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/HoliDayRental.DAL/Entity/BienEchange.cs</url>
+          <line>28</line>
+          <properties documentPath="D:\interface3\EpreuveASP\Template\Template\HomeShare\HoliDayRental.DAL\Entity\BienEchange.cs" initialLine="28" containingFunctionPresentation="property 'idMembre'">
+            <startOffsets>
+              <option value="893" />
+              <option value="898" />
+            </startOffsets>
+            <endOffsets>
+              <option value="897" />
+              <option value="902" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/HoliDayRental.BLL/Handlers/Mapper.cs</url>
+          <line>56</line>
+          <properties documentPath="D:\interface3\EpreuveASP\Template\Template\HomeShare\HoliDayRental.BLL\Handlers\Mapper.cs" initialLine="56" containingFunctionPresentation="method 'ToDALL'">
+            <startOffsets>
+              <option value="1652" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1653" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/HoliDayRental.BLL/Handlers/Mapper.cs</url>
+          <line>31</line>
+          <properties documentPath="D:\interface3\EpreuveASP\Template\Template\HomeShare\HoliDayRental.BLL\Handlers\Mapper.cs" initialLine="31" containingFunctionPresentation="method 'ToBLL'">
+            <startOffsets>
+              <option value="854" />
+            </startOffsets>
+            <endOffsets>
+              <option value="855" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Frame#HoliDayRental.Controllers.BienEchangeController.Edit" memberName="result" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

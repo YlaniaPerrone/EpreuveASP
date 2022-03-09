@@ -78,7 +78,7 @@ namespace HoliDayRental.BLL.Entity
             DisabledDate = dateDisable;
             Latitude = latitude;
             Longitude = longitude;
-            idMembre = idMembre;
+            idMembre = id_membre;
             DateCreation = date;
 
         }

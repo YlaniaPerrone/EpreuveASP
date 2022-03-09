@@ -38,8 +38,8 @@ namespace HoliDayRental
 
             
             //service bien
-            // services.AddScoped<HoliDayRental.Common.Repository.IBienEchangeRepository<HoliDayRental.DAL.Entity.BienEchange>, HoliDayRental.DAL.Repository.BienEchangeService>();
-            // services.AddScoped<HoliDayRental.Common.Repository.IBienEchangeRepository<HoliDayRental.BLL.Entity.BienEchange>, HoliDayRental.BLL.Service.BienEchangeService>();
+            services.AddScoped<HoliDayRental.Common.Repository.IBienEchangeRepository<HoliDayRental.DAL.Entity.BienEchange>, HoliDayRental.DAL.Repository.BienEchangeService>();
+            services.AddScoped<HoliDayRental.Common.Repository.IBienEchangeRepository<HoliDayRental.BLL.Entity.BienEchange>, HoliDayRental.BLL.Service.BienEchangeService>();
 
             //service membre
             services.AddScoped<HoliDayRental.Common.Repository.IMembreRepository<HoliDayRental.DAL.Entity.Membre>, HoliDayRental.DAL.Repository.MembreService>();
