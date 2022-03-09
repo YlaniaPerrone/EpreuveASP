@@ -24,7 +24,7 @@ namespace HoliDayRental.Controllers
         // GET: MembreController
         public ActionResult Index()
         {
-            IEnumerable<MembreItem> model = _membreService.Get().Select(b => b.ToListMembre());
+            IEnumerable<MembreItem> model = _membreService.Get().Select(m => m.ToListMembre());
 
             model = model.Select(m => { m.PaysList = _paysService.Get((int)m.idPays).ToListPays(); return m; });
             return View(model);
@@ -83,6 +83,7 @@ namespace HoliDayRental.Controllers
         {
             MembreEdit model = _membreService.Get(id).ToEditMembre();
             model.PaysList = _paysService.Get().Select(b => b.ToListPays());
+
             return View(model);
         }
 

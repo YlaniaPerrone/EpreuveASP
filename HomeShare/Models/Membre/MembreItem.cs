@@ -17,12 +17,9 @@ namespace HoliDayRental.Models.Membre
         
         [ScaffoldColumn(false)]
         public int idPays { get; set; }
-        [ScaffoldColumn(false)]
-    
-        public Payss.Pays PaysList { get; set; }
         
-        [DisplayName("Pays")]
-        public string LibellePays { get { return this.PaysList.Libelle; } }
-       
+        // [ScaffoldColumn(false)]
+        public Payss.Pays PaysList { get; set; }
+
     }
 }

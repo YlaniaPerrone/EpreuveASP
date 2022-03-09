@@ -91,6 +91,7 @@ namespace HoliDayRental.BLL.Handlers
                 Telephone = entity.Telephone,
                 Login = entity.Login,
                 Password = entity.Password,
+                idPays = entity.Pays
             };
         }
 
@@ -106,7 +107,7 @@ namespace HoliDayRental.BLL.Handlers
                 Telephone = entity.Telephone,
                 Login = entity.Login,
                 Password = entity.Password,
-                // Pays = entity.pays.idPays
+                Pays = entity.idPays
             };
         }
 

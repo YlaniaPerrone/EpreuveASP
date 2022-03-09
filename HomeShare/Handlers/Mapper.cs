@@ -92,9 +92,9 @@ namespace HoliDayRental.Handlers
                idMembre = entity.idMembre,
                Nom = entity.Nom,
                Prenom = entity.Prenom,
+                idPays = entity.idPays
                 // Email = entity.Email,
                 // Telephone = entity.Telephone,
-                idPays = entity.idPays
                 // Login = entity.Login,
                 // Password = entity.Password
 
@@ -128,9 +128,6 @@ namespace HoliDayRental.Handlers
                 Email = entity.Email,
                 Telephone = entity.Telephone,
                 Pays = entity.idPays,
-                Login = entity.Login,
-                Password = entity.Password
-
             };
         }
         
